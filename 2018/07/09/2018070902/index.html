@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="葉蕓榕-随笔">
 <meta property="og:description" content="一、ThinkPHPThinkPHP(FCS)是一个轻量级的中型框架，是从Java的Struts结构移植过来的中文PHP开发框架。它使用面向对象的开发结构和MVC模式，并且模拟实现了Struts的标签库，各方面都比较人性化，熟悉J2EE的开发人员相对比较容易上手，适合php框架初学者。 ThinkPHP的宗旨是简化开发、提高效率、易于扩展，其在对数据库的支持方面已经包括MySQL、MSSQL、Sq">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-18T06:42:49.820Z">
+<meta property="og:updated_time" content="2018-09-19T07:03:51.798Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel、TP、YII框架的优缺点">
 <meta name="twitter:description" content="一、ThinkPHPThinkPHP(FCS)是一个轻量级的中型框架，是从Java的Struts结构移植过来的中文PHP开发框架。它使用面向对象的开发结构和MVC模式，并且模拟实现了Struts的标签库，各方面都比较人性化，熟悉J2EE的开发人员相对比较容易上手，适合php框架初学者。 ThinkPHP的宗旨是简化开发、提高效率、易于扩展，其在对数据库的支持方面已经包括MySQL、MSSQL、Sq">
@@ -177,6 +177,30 @@
     
     <!-- 目录内容 -->
     
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+              <span class="btn-bg"></span>
+              <span class="btn-text">文章导航</span>
+              </p>
+    	<div id="toc-article" class="toc-article">
+    	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    		<strong class="toc-title">文章目录</strong>
+               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、ThinkPHP"><span class="toc-number">1.</span> <span class="toc-text">一、ThinkPHP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#优点"><span class="toc-number">1.1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缺点"><span class="toc-number">1.2.</span> <span class="toc-text">缺点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、Yii"><span class="toc-number">2.</span> <span class="toc-text">二、Yii</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#优点-1"><span class="toc-number">2.1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缺点："><span class="toc-number">2.2.</span> <span class="toc-text">缺点：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、laravel"><span class="toc-number">3.</span> <span class="toc-text">三、laravel</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#优点-2"><span class="toc-number">3.1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缺点-1"><span class="toc-number">3.2.</span> <span class="toc-text">缺点</span></a></li></ol></li></ol>
+             </div>
+       <script type="text/javascript">
+    	function showToc(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:block");
+    		show_toc_btn.setAttribute("style","display:none");
+    		};
+    	function showBtn(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:none");
+    		show_toc_btn.setAttribute("style","display:block");
+    		};
+       </script>
+          
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
