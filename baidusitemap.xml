@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/06/06/2018060601/</loc>
+    <lastmod>2018-09-19T06:15:44.998Z</lastmod>
+    <data>
+        <display>
+        <title>CSharp应用MongoDB</title>
+        <pubTime>2018-06-06T11:32:12.000Z</pubTime>
+        
+        <tag>CSharp</tag>
+         
+        <tag>MongoDB</tag>
+         
+         
+           
+             
+              <breadCrumb title="Net" url="http://yoursite.com/categories/Net/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/09/18/CSharp-HttpClientClass-1/</loc>
+    <lastmod>2018-09-19T06:14:07.774Z</lastmod>
+    <data>
+        <display>
+        <title>CSharp-HttpClientClass</title>
+        <pubTime>2018-09-18T01:39:08.000Z</pubTime>
+        
+        <tag>CSharp</tag>
+         
+         
+           
+             
+              <breadCrumb title="Net" url="http://yoursite.com/categories/Net/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/09/2018070902/</loc>
+    <lastmod>2018-09-18T06:42:49.820Z</lastmod>
+    <data>
+        <display>
+        <title>laravel、TP、YII框架的优缺点</title>
+        <pubTime>2018-07-09T12:22:37.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+        <tag>ThinkPHP</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/09/11/HigConcurrencPprograCcomparison/</loc>
+    <lastmod>2018-09-11T02:48:02.867Z</lastmod>
+    <data>
+        <display>
+        <title>高并发方案对比（仅扣减库存部分）</title>
+        <pubTime>2018-09-11T02:08:08.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/09/07/Csharp-Connection-MySQL/</loc>
+    <lastmod>2018-09-07T12:11:24.673Z</lastmod>
+    <data>
+        <display>
+        <title>Csharp连接MYSQL核心代码</title>
+        <pubTime>2018-09-07T12:02:39.000Z</pubTime>
+        
+        <tag>CSharp</tag>
+         
+        <tag>MySQL</tag>
+         
+         
+           
+             
+              <breadCrumb title="Net" url="http://yoursite.com/categories/Net/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/09/07/CSharp-Timer-Class/</loc>
+    <lastmod>2018-09-07T12:08:28.001Z</lastmod>
+    <data>
+        <display>
+        <title>CSharp定时类</title>
+        <pubTime>2018-09-07T10:14:07.000Z</pubTime>
+        
+        <tag>CSharp</tag>
+         
+         
+           
+             
+              <breadCrumb title="Net" url="http://yoursite.com/categories/Net/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/08/13/ready-http6/</loc>
+    <lastmod>2018-08-22T12:51:13.784Z</lastmod>
+    <data>
+        <display>
+        <title>《图解HTTP》笔记 第六章 HTTP首部</title>
+        <pubTime>2018-08-13T09:47:24.000Z</pubTime>
+        
+        <tag>Ready</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/08/06/ready-http3/</loc>
+    <lastmod>2018-08-17T09:36:59.103Z</lastmod>
+    <data>
+        <display>
+        <title>《图解HTTP》笔记 第三章 HTTP报文内的HTTP信息</title>
+        <pubTime>2018-08-06T11:49:51.000Z</pubTime>
+        
+        <tag>Ready</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ready" url="http://yoursite.com/categories/Ready/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/08/06/ready-http2/</loc>
+    <lastmod>2018-08-17T09:36:25.094Z</lastmod>
+    <data>
+        <display>
+        <title>《图解HTTP》笔记 第二章 简单的HTTP协议</title>
+        <pubTime>2018-08-06T07:55:22.000Z</pubTime>
+        
+        <tag>Ready</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ready" url="http://yoursite.com/categories/Ready/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/08/03/ready-http/</loc>
+    <lastmod>2018-08-17T09:35:34.776Z</lastmod>
+    <data>
+        <display>
+        <title>《图解HTTP》笔记 第一章 了解web及网络基础</title>
+        <pubTime>2018-08-03T09:59:49.000Z</pubTime>
+        
+        <tag>Ready</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ready" url="http://yoursite.com/categories/Ready/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/23/CSharp%E7%AA%97%E5%8F%A3-%E5%B0%86%E8%A1%A8%E6%A0%BC%E4%B8%AD%E7%9A%84%E4%BF%A1%E6%81%AF%E6%89%93%E5%8D%B0%E5%88%B0%E6%8C%87%E5%AE%9A%E5%9B%BE%E7%89%87%E4%B8%8A/</loc>
+    <lastmod>2018-08-17T09:31:41.472Z</lastmod>
+    <data>
+        <display>
+        <title>CSharp窗口-将表格中的信息打印到指定图片上</title>
+        <pubTime>2018-04-23T01:15:31.000Z</pubTime>
+        
+        <tag>CSharp</tag>
+         
+         
+           
+             
+              <breadCrumb title="Net" url="http://yoursite.com/categories/Net/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/23/Laravel%E5%AF%BC%E5%87%BA%E4%B8%80%E4%B8%AA%E8%A1%A8%E6%A0%BC%E5%8C%85%E5%90%AB%E5%A4%9A%E4%B8%AA%E5%AD%90%E8%A1%A8/</loc>
+    <lastmod>2018-08-17T09:28:05.992Z</lastmod>
+    <data>
+        <display>
+        <title>Laravel导出多个表格为同一个文件</title>
+        <pubTime>2018-04-23T12:18:29.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/23/2018052301/</loc>
+    <lastmod>2018-08-17T09:25:47.505Z</lastmod>
+    <data>
+        <display>
+        <title>laravel报错 openssl_cipher_iv_length()</title>
+        <pubTime>2018-05-23T06:15:17.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/06/07/2018060702/</loc>
+    <lastmod>2018-08-17T09:23:44.017Z</lastmod>
+    <data>
+        <display>
+        <title>使用vsCode断点调试PHP（支持Lumen\Laravel）</title>
+        <pubTime>2018-06-07T09:28:47.000Z</pubTime>
+        
+        <tag>Lumen</tag>
+         
+        <tag>Laravel</tag>
+         
+        <tag>Editor</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/06/08/2018060802/</loc>
+    <lastmod>2018-08-17T09:17:34.450Z</lastmod>
+    <data>
+        <display>
+        <title>使用CSharp Net Core记录</title>
+        <pubTime>2018-06-08T11:43:43.000Z</pubTime>
+        
+        <tag>CSharp</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/09/2018070901/</loc>
+    <lastmod>2018-08-17T09:09:54.076Z</lastmod>
+    <data>
+        <display>
+        <title>简单尝试使用Laravel队列</title>
+        <pubTime>2018-07-09T11:28:51.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/18/2018071801/</loc>
+    <lastmod>2018-08-17T09:07:57.261Z</lastmod>
+    <data>
+        <display>
+        <title>新零售经销存接口-高并发处理方案</title>
+        <pubTime>2018-07-18T11:44:15.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/08/01/Laravel-Life/</loc>
+    <lastmod>2018-08-17T07:06:52.952Z</lastmod>
+    <data>
+        <display>
+        <title>Laravel-生命周期</title>
+        <pubTime>2018-08-01T02:41:24.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/08/15/clear-oss-file/</loc>
+    <lastmod>2018-08-15T07:29:17.950Z</lastmod>
+    <data>
+        <display>
+        <title>基于laravel框架删除指定的OSS文件</title>
+        <pubTime>2018-08-15T07:20:44.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/08/10/ready-http5/</loc>
+    <lastmod>2018-08-13T09:39:42.781Z</lastmod>
+    <data>
+        <display>
+        <title>《图解HTTP》笔记 第五章 与HTTP协作的web服务器</title>
+        <pubTime>2018-08-10T13:06:34.000Z</pubTime>
+        
+        <tag>Ready</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/08/08/ready-http4/</loc>
+    <lastmod>2018-08-10T13:04:07.329Z</lastmod>
+    <data>
+        <display>
+        <title>《图解HTTP》笔记 第四章 返回结果的HTTP状态码</title>
+        <pubTime>2018-08-08T07:49:26.000Z</pubTime>
+        
+        <tag>Ready</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/08/03/ready-blog-testimonials/</loc>
+    <lastmod>2018-08-03T08:49:26.332Z</lastmod>
+    <data>
+        <display>
+        <title>阅读《深度工作：充分使用每一份脑力》</title>
+        <pubTime>2018-08-03T08:39:58.000Z</pubTime>
+        
+        <tag>Ready</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ready" url="http://yoursite.com/categories/Ready/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/02/%E8%AE%B0%E4%B8%80%E6%AC%A1laravel%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84post%E8%AF%B7%E6%B1%82%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2018-08-03T03:32:31.006Z</lastmod>
+    <data>
+        <display>
+        <title>记一次laravel框架下的post请求测试</title>
+        <pubTime>2018-04-02T11:59:48.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/04/laravel%E5%AF%BC%E5%87%BAXlsx/</loc>
+    <lastmod>2018-08-03T03:32:16.308Z</lastmod>
+    <data>
+        <display>
+        <title>laravel导出Xlsx</title>
+        <pubTime>2018-04-04T11:11:14.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/03/30/Laravel-permission%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2018-08-03T03:32:05.076Z</lastmod>
+    <data>
+        <display>
+        <title>Laravel-permission应用实践</title>
+        <pubTime>2018-03-30T01:43:04.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/08/Laravel-permission%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B52/</loc>
+    <lastmod>2018-08-03T03:31:51.516Z</lastmod>
+    <data>
+        <display>
+        <title>Laravel权限管理的应用记录</title>
+        <pubTime>2018-04-08T10:40:58.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/09/laravel%E5%8E%9F%E7%94%9FMySQL%E4%B9%8BGroup%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2018-08-03T03:31:39.037Z</lastmod>
+    <data>
+        <display>
+        <title>laravel原生MySQL之Group记录</title>
+        <pubTime>2018-04-09T06:14:28.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+        <tag>Mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/12/Windows%E7%8E%AF%E5%A2%83%E4%B8%8BMix%E8%BF%90%E8%A1%8Cnpm%E4%B8%8EYaim%E6%8A%A5%E9%94%99/</loc>
+    <lastmod>2018-08-03T03:31:27.732Z</lastmod>
+    <data>
+        <display>
+        <title>Windows环境下Mix运行npm与Yaim报错</title>
+        <pubTime>2018-04-12T09:50:46.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/13/CSharp%E6%89%A9%E5%B1%95LiteDB%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2018-08-03T03:31:15.972Z</lastmod>
+    <data>
+        <display>
+        <title>C#扩展LiteDB数据库</title>
+        <pubTime>2018-04-13T12:21:40.000Z</pubTime>
+        
+        <tag>CSharp</tag>
+         
+         
+           
+             
+              <breadCrumb title="Net" url="http://yoursite.com/categories/Net/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/12/%E4%BD%BF%E7%94%A8CSharp%E4%B8%8EMySQL%E5%AF%BC%E5%87%BA%E5%AF%BC%E5%85%A5%E6%8A%A5%E8%A1%A8/</loc>
+    <lastmod>2018-08-03T03:31:03.381Z</lastmod>
+    <data>
+        <display>
+        <title>使用C#与MySQL导出导入报表</title>
+        <pubTime>2018-04-12T10:11:24.000Z</pubTime>
+        
+        <tag>CSharp</tag>
+         
+        <tag>Mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="Net" url="http://yoursite.com/categories/Net/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/04/Mysql%E5%AF%BC%E5%87%BA%E8%A1%A8%E6%A0%BC%E5%8F%98%E6%88%90%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
+    <lastmod>2018-08-03T03:30:49.222Z</lastmod>
+    <data>
+        <display>
+        <title>Mysql导出表格变成科学计数法的解决方案</title>
+        <pubTime>2018-04-04T11:55:00.000Z</pubTime>
+        
+        <tag>Mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/03/Mysql%E8%AF%AD%E5%8F%A5%E4%BC%98%E5%8C%96%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2018-08-03T03:30:40.540Z</lastmod>
+    <data>
+        <display>
+        <title>Mysql语句优化记录</title>
+        <pubTime>2018-04-03T05:52:22.000Z</pubTime>
+        
+        <tag>Mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/13/Mysql%E6%9F%A5%E8%AF%A2%E5%87%BA%E6%9D%A5%E7%9A%84%E6%95%B0%E6%8D%AE%E6%97%A0%E6%B3%95%E5%90%88%E5%B9%B6%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
+    <lastmod>2018-08-03T03:30:31.085Z</lastmod>
+    <data>
+        <display>
+        <title>Mysql查询出来的数据无法合并的解决方案</title>
+        <pubTime>2018-04-13T12:35:46.000Z</pubTime>
+        
+        <tag>Mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/13/laravel%E5%AF%BC%E5%85%A5%E8%A1%A8%E6%A0%BC%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2MySQL/</loc>
+    <lastmod>2018-08-03T03:30:21.101Z</lastmod>
+    <data>
+        <display>
+        <title>laravel导入表格获取数据查询MySQL</title>
+        <pubTime>2018-04-13T01:41:19.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+        <tag>Mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/18/%E5%85%B3%E4%BA%8E%E5%A6%82%E4%BD%95%E5%85%B3%E9%97%ADLaravel%E4%B8%AD%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2018-08-03T03:30:08.245Z</lastmod>
+    <data>
+        <display>
+        <title>关于如何关闭Laravel中严格模式的两种方法</title>
+        <pubTime>2018-04-18T10:48:54.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+        <tag>Mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/03/30/Laravel%E5%A4%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2018-08-03T03:29:56.581Z</lastmod>
+    <data>
+        <display>
+        <title>Laravel多数据库连接记录</title>
+        <pubTime>2018-03-30T07:38:46.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+        <tag>Mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/03/29/laravel%E4%B8%8ERedis%E5%BC%80%E5%8F%91%E8%B4%AD%E7%89%A9%E8%BD%A6/</loc>
+    <lastmod>2018-08-03T03:29:46.669Z</lastmod>
+    <data>
+        <display>
+        <title>laravel与Redis开发购物车</title>
+        <pubTime>2018-03-29T09:54:43.000Z</pubTime>
+        
+        <tag>Redis</tag>
+         
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/02/laravel%E4%B8%8EMongoDB-%E7%9A%84%E9%83%A8%E5%88%86%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2018-08-03T03:29:30.941Z</lastmod>
+    <data>
+        <display>
+        <title>laravel与MongoDB 的部分实践</title>
+        <pubTime>2018-04-02T10:02:13.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+        <tag>MongoDB</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/18/Laravel%E6%89%A9%E5%B1%95%E9%98%BF%E9%87%8C%E4%BA%91OSS%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/</loc>
+    <lastmod>2018-08-03T03:29:20.603Z</lastmod>
+    <data>
+        <display>
+        <title>Laravel扩展阿里云OSS对象存储</title>
+        <pubTime>2018-04-18T11:05:26.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+        <tag>OSS对象存储</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/04/lumen%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2018-08-03T03:28:46.133Z</lastmod>
+    <data>
+        <display>
+        <title>lumen的安装与使用记录</title>
+        <pubTime>2018-05-04T11:07:55.000Z</pubTime>
+        
+        <tag>Lumen</tag>
+         
+        <tag>Redis</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/07/2018050702/</loc>
+    <lastmod>2018-08-03T03:28:20.397Z</lastmod>
+    <data>
+        <display>
+        <title>Redis 存储记录</title>
+        <pubTime>2018-05-07T07:32:16.000Z</pubTime>
+        
+        <tag>Lumen</tag>
+         
+        <tag>Redis</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/11/2018051102/</loc>
+    <lastmod>2018-08-03T03:27:57.821Z</lastmod>
+    <data>
+        <display>
+        <title>lumen与laravel获取get中的参数</title>
+        <pubTime>2018-05-11T09:24:26.000Z</pubTime>
+        
+        <tag>Lumen</tag>
+         
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/23/2018052302/</loc>
+    <lastmod>2018-08-03T03:27:33.333Z</lastmod>
+    <data>
+        <display>
+        <title>.Net Core 认知</title>
+        <pubTime>2018-05-23T08:18:56.000Z</pubTime>
+        
+        <tag>CSharp</tag>
+         
+         
+           
+             
+              <breadCrumb title="Nets" url="http://yoursite.com/categories/Nets/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/11/2018051101/</loc>
+    <lastmod>2018-08-03T03:27:03.829Z</lastmod>
+    <data>
+        <display>
+        <title>lumen与larave的加密与验证</title>
+        <pubTime>2018-05-11T09:22:34.000Z</pubTime>
+        
+        <tag>Lumen</tag>
+         
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/24/2018052401/</loc>
+    <lastmod>2018-08-03T03:26:13.350Z</lastmod>
+    <data>
+        <display>
+        <title>在VSCode编辑器中使用PHP</title>
+        <pubTime>2018-05-24T02:54:45.000Z</pubTime>
+        
+        <tag>Editor</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/31/2018053101/</loc>
+    <lastmod>2018-08-03T03:25:52.637Z</lastmod>
+    <data>
+        <display>
+        <title>在PHP中使用Redis操作Lua</title>
+        <pubTime>2018-05-31T00:46:51.000Z</pubTime>
+        
+        <tag>Redis</tag>
+         
+        <tag>Lua</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/06/07/2018060701/</loc>
+    <lastmod>2018-08-03T03:19:04.646Z</lastmod>
+    <data>
+        <display>
+        <title>Lumen|Laravel框架臃肿解决方案</title>
+        <pubTime>2018-06-07T03:31:28.000Z</pubTime>
+        
+        <tag>Lumen</tag>
+         
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/06/08/2018060801/</loc>
+    <lastmod>2018-08-03T03:18:53.750Z</lastmod>
+    <data>
+        <display>
+        <title>PHP求两个时间的天数间隔</title>
+        <pubTime>2018-06-08T11:19:16.000Z</pubTime>
+        
+        <tag>Lumen</tag>
+         
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/06/11/2018061101/</loc>
+    <lastmod>2018-08-03T03:18:11.319Z</lastmod>
+    <data>
+        <display>
+        <title>ThingkPhP框架M(),D(),A(),R()方法简解</title>
+        <pubTime>2018-06-11T08:14:24.000Z</pubTime>
+        
+        <tag>ThinkPHP</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/06/12/2018061201/</loc>
+    <lastmod>2018-08-03T03:15:35.879Z</lastmod>
+    <data>
+        <display>
+        <title>《代码的简洁之道》-笔记</title>
+        <pubTime>2018-06-12T00:36:16.000Z</pubTime>
+        
+        <tag>Ready</tag>
+         
+         
+           
+             
+              <breadCrumb title="Ready" url="http://yoursite.com/categories/Ready/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/20/2018072001/</loc>
+    <lastmod>2018-08-03T03:14:20.279Z</lastmod>
+    <data>
+        <display>
+        <title>Laravel使用Redis缓存锁</title>
+        <pubTime>2018-07-20T08:35:18.000Z</pubTime>
+        
+        <tag>Redis</tag>
+         
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/23/laravle-supervisor-server/</loc>
+    <lastmod>2018-08-03T03:14:06.775Z</lastmod>
+    <data>
+        <display>
+        <title>laravle-supervisor-server</title>
+        <pubTime>2018-07-23T02:19:55.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/25/Redis-hmget/</loc>
+    <lastmod>2018-08-03T03:13:51.359Z</lastmod>
+    <data>
+        <display>
+        <title>该不该使用Redis中的hmget函数</title>
+        <pubTime>2018-07-25T12:05:09.000Z</pubTime>
+        
+        <tag>Redis</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://yoursite.com/2018/03/29/hello-world/</loc>
+    <lastmod>2018-03-29T07:34:05.117Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2018-03-29T07:34:05.116Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+</urlset>
