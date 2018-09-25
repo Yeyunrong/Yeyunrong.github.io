@@ -6,18 +6,35 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/8 | 葉蕓榕-随笔</title>
+  <title>《数据库系统工程师教程-中级》 笔记 第二章数据结构(1) | 葉蕓榕-随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="葉蕓榕的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="葉蕓榕-随笔">
-<meta property="og:url" content="http://yoursite.com/archives/2018/08/index.html">
+  <meta name="description" content="前言">
+<meta name="keywords" content="Ready">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《数据库系统工程师教程-中级》 笔记 第二章数据结构(1)">
+<meta property="og:url" content="http://yoursite.com/2018/09/19/StudyDataStructure/index.html">
 <meta property="og:site_name" content="葉蕓榕-随笔">
-<meta property="og:description" content="葉蕓榕的个人博客">
+<meta property="og:description" content="前言">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure02.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure03.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure04.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure05.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure06.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure07.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure08.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure09.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure10.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure11.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure12.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure13.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure14.png">
+<meta property="og:updated_time" content="2018-09-25T06:57:00.161Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="葉蕓榕-随笔">
-<meta name="twitter:description" content="葉蕓榕的个人博客">
+<meta name="twitter:title" content="《数据库系统工程师教程-中级》 笔记 第二章数据结构(1)">
+<meta name="twitter:description" content="前言">
+<meta name="twitter:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure.png">
   
     <link rel="alternative" href="/atom.xml" title="葉蕓榕-随笔" type="application/atom+xml">
   
@@ -155,85 +172,172 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-StudyDataStructure" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      《数据库系统工程师教程-中级》 笔记 第二章数据结构(1)
+    </h1>
+  
+
+        
+        <a href="/2018/09/19/StudyDataStructure/" class="archive-article-date">
+  	<time datetime="2018-09-19T08:02:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
+</a>
+        
+      </header>
     
+    <!-- 目录内容 -->
+    
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+              <span class="btn-bg"></span>
+              <span class="btn-text">文章导航</span>
+              </p>
+    	<div id="toc-article" class="toc-article">
+    	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    		<strong class="toc-title">文章目录</strong>
+               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用数据结构"><span class="toc-number">1.1.</span> <span class="toc-text">常用数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#线性表"><span class="toc-number">1.1.1.</span> <span class="toc-text">线性表</span></a></li></ol></li></ol></li></ol>
+             </div>
+       <script type="text/javascript">
+    	function showToc(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:block");
+    		show_toc_btn.setAttribute("style","display:none");
+    		};
+    	function showBtn(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:none");
+    		show_toc_btn.setAttribute("style","display:block");
+    		};
+       </script>
+          
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><a id="more"></a>
+<blockquote>
+<p>数据抽象是一种创造性思维活动，这种能力是任何开发工具都无法取代的。</p>
+<font color="red">数据结构</font>是指数据元素的集合（或数据对象）及元素间的相互关系和构造方法。<br>在数据结构中，数据对象中元素之间的相互关系是数据的逻辑结构，数据元素之间的关系的存储形式称之为<font color="red">存储结构(或物理结构)</font><br>数据结构按照逻辑关系的不同分为<font color="red">线性结构</font>和<font color="red">非线性结构</font>两大类,其中线性结构又分为<font color="blue">树结构和图结构</font>
+</blockquote>
+<h2 id="常用数据结构"><a href="#常用数据结构" class="headerlink" title="常用数据结构"></a>常用数据结构</h2><h3 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h3><blockquote>
+<p>线性表</p>
+</blockquote>
+<p>1.定义：</p>
+<p>线性表是一类最简单、最常用的数据结构。描述为：一个线性表是n个元素的有限序列。其特点为，在非空的数据元素集合中：</p>
+<ul>
+<li>存在唯一的一个称作“<font color="red">第一个</font>”的元素；</li>
+<li>存在唯一的一个称作“<font color="red">最后一个</font>”的元素；</li>
+<li>除第一个元素外，<u>集合的每个元素均只有一个直接前驱</u>；</li>
+<li>除最后一个元素外，<u>集合中的每个元素均只有一个直接后继</u>。</li>
+</ul>
+<p>2.线性表的存储结构：</p>
+<ul>
+<li>线性表的<font color="red">顺序存储</font></li>
+</ul>
+<blockquote>
+<p>是用一组地址连续的存储单元一次存储线性表中的数据元素，逻辑关系相邻的两个元素在物理位置上也相邻。</p>
+</blockquote>
+<p>优点：可以随机存取表中的元素。<br>缺点：插入和删除操作需要移动大量的元素。</p>
+<p>求第i个元素aᵢ的存储位置：</p>
+<blockquote>
+<p>LOC(̶aᵢ) = LOC(̶aᵢ)+(i-1)*L</p>
+</blockquote>
+<p>LOC(̶aᵢ) 表示表中第一个元素的存储位置，L是表中每个元素所占用的空间的大小。</p>
+<ul>
+<li><font color="red">线性表的链式存储</font>
+
+</li>
+</ul>
+<p>线性表的链式存储是用<font color="blue">结点</font>来存储数据元素，结点的空间可以是连续的，也可以是不连续的，<t>因此存储数据元素的同时必须存储元素之间的逻辑关系</t>。<font color="blue">结点空间</font>只有在需要的时候才申请，无须实现分配。最基本的结点结构如下：</p>
+<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure.png" alt="Alt text"></p>
+<p>数据域用来存储数据元素的值，指针域则存储当前元素的直接前驱或直接后驱信息（即指向信息），指针域中的信息称为指针(或域)。</p>
+<p>单链表的由来：</p>
+<blockquote>
+<p>n个结点通过指针连接成一个链表，结点中只有一个指针域。称为线性链表或单链表。</p>
+</blockquote>
+<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure02.png" alt="Alt text"></p>
+<font color="red">注意</font>：线性表采用链表作为存储结构时，不能进行数据元素的随机访问，其优点是插入和删除操作不需要移动元素。<br><br>其他几种链表结构：<br><br>1. 双向链表：每个节点包含两个指针，指明直接前驱和直接后继元素。可在这两个方向上遍历其后及其前的元素。<br>2. 循环链表：表尾结点的指针指向表中的第一个结点，可在任何位置上方向不变地遍历整个链表。<br>3. 静态链表：借助数组来描述线性表的链式存储结构。<br><br>在链式存储结构中，只需要一个指针（头指针）指向第一个结点，就可以顺序访问到表中的任意元素。头指针即头结点，不存储任何数据元素，作为链表中的第一个结点并另头指针指向该结点。<br><br><em> 线性表的插入和删除运算<br><br>1.基于顺序存储结构的运算。<br>插入元素前需要移动元素以挪出空的存储单元，然后再插入元素。删除元素时同样需要移动元素，以填充被删元素空出来的存储单元。在等概率下平均移动元素的次数分别为：<br><br><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure03.png" alt="Alt text"><br><br>2.基于链式存储结构的运算。<br><br>在链式存储结构下，<t>插入与删除实质上都是对相关指针的修改。</t>
+</em> 单向链表中插入节点时，指针的变化如图所示：<br><br><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure04.png" alt="Single list insert nodes"><br><br><em> 在单向链表中删除节点时，指针的变化如图所示：<br><br><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure05.png" alt="Single list delete nodes">
+
+</em> 双向链表中插入结点时，指正的变化如图所示：<br><br><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure06.png" alt="Bidirectional list insert nodes"><br><br><em> 双向链表中删除结点时，指针的变化如图所示：<br><br><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure07.png" alt="Bidirectional list delete nodes"><br><br><br>#### 栈和队列 ####<br><br>&gt;栈的定义和基本运算<br><br>1.栈的定义：<br>栈是<t>只能通过访问它的的一端来实现数据存储和检索的一种线性数据结构</t>。其操作为：<font color="red">先进后出</font>。栈也是一种线性。<br><br><font color="blue">栈顶(top)</font>：进行插入和删除操作的一端称之为栈顶。<br><font color="blue">栈底(bottom)</font>：与栈底相反的一端称之为栈底。<br><font color="blue">空栈(empty stack)</font>：不含数据元素的栈称之为空栈。<br><br>2.栈的基本运算：
+
+</em> 置空栈InitStack(S):创建一个空栈S。<br><em> 判栈空Empty(S):当栈S为空栈时返回真值，否则返回假值。
+</em> 入栈Push(S,x):将元素x加入栈顶，并更新栈顶指针。<br><em> 出栈Pop(S):将栈顶元素从栈中删除，并更新栈顶指针。若需要得到栈顶元素的值，可将Pop(S)定义为一个函数，返回栈顶元素的值。
+</em> 读栈顶元素Top(S)：返回栈顶元素的值，但不修改栈顶指针。<br><br>&gt;栈的存储结构<br><br>1.栈的顺序存储。<br><br>栈的顺序存储指用一组地址连续的存储单元依次存储栈顶到栈底的数据元素，同时附设指针top指示栈顶元素的位置。<br>采用顺序存储结构的栈也被称为<font color="red">顺序栈</font>。<br><t>在顺序存储中栈的容量是有限的</t>，因此在一个元素入栈时，需要判断是否栈满（栈空间中没有空闲单元）。若栈满，则元素入栈会发生上溢现象。<br><br>为减小产生上溢的概率，利用栈底位置相对不变的特性，将两个顺序栈共享一个一维数据空间，以互补余缺，实现方法是将两个栈的栈底分别放在存储空间的两端，让他们的栈顶各自像中间衍生，这样一来使得只有在整个存储空间被占满时发生上溢。<br><br><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure08.png" alt="share stack"><br><br>2.栈的链式存储<br><br>作为为了克服顺序存储结构所带来上溢问题的栈。也被称之为<font color="red">链栈</font>。<br><t>由于栈中元素的插入和删除仅在栈顶一端进行，因此不必设头结点，<font color="red">链表的头指针就是栈顶指针</font><t>。<br><br><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure09.png" alt="链栈"><br><br>&gt;队列的定义及基本运算<br><br>1.队列的定义：<br><br>队列是一种先进先出(FIFO)的<t>线性表</t>，它只允许在表的一端插入元素，而在表的另一端删除元素。<br>在队列中，允许插入元素的一端称为队尾（rear）。允许删除元素的一端称之为队头（front）<br><br>2.队列的基本运算：<br><br><em> 置队空 InitQueue(Q):创建一个空的队列Q。
+</em> 判队空 Empty(Q):当队列为空时返回真值，否则为假。<br><em> 入队 EnQueue(Q,x):将元素x加到队列Q的队尾，并更新队尾指针。
+</em> 出队 DeQueue(Q):将队头元素从队列Q中删除，并更新队头指针。<br><em> 读队头元素 Frontque(Q):返回队头元素的值，但不更新队头指针。<br><br>&gt;队列的存储结构<br><br>1.队列的顺序存储：<br><br>队列的顺序存储结构又称为<font color="blue">顺序队列</font>，它也是利用一组地址连续的存储单元存放队列中的元素。由于队列中元素的插入和删除限定在表的两端进行，<t>因此需要设置队头指针和队尾指针，分别指示出当前队首元素和队尾元素</t>。<br><br>在顺序队列中，元素入队时，只需修改队尾指针；<br>元素出队时只需修改队头指针。<br><br>&gt;注：由于顺序队列的存储空间是提前设定的，所以队尾指针会有一个上限值，就不能只通过修改队尾指针来实现新元素的入队操作。<br><br><font color="blue">循环队列</font>：通过整除取余运算将顺序队列假象成为一个环状结构，称之为循环队列。<br>在其队列空和队列满的情况下，循环队列的队头、队尾指针指向的位置相同，为了区别队空和队满的情况，有两种处理方式：
+
+</em> 设置一个标志位，以区别头、尾指针的值相同队列是空还是满；<br><em> 牺牲一个元素空间，约定以“队列的尾指针所指位置的下一个位置是头指针时”表示队列满，头、尾指针的值相同时表示队列为空。<br><br><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure10.png" alt="循环队列 maxsize"><br><br>2.队列的链式存储。<br><br>队列的链式存储被称之为<font color="blue">链队列</font>。拥有一个头结点，头指针指向头结点。判断空队列的条件就是：<t>头指针和尾指针的值相同，均指向头结点。</t><br><br><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure11.png" alt="队列的链式存储结构示意"><br><br>&gt;队列结构常用于处理需要排队的场合，如操作系统中处理打印任务的打印队列，以及离散事件的计算机模拟等。<br><br><br>#### 串 ####<br><br>&gt;串的定义及基本运算<br><br>1.定义：<br><br>串是仅由字符构成的有限序列，是取值范围受限的的线性表。<br><br>2.基本概念：
+
+</em> 空串：长度为零的串，空串不包含任何字符。<br><em> 空格串：由一个或多个空格组成的串。
+</em> 子串：由串中<t>任意长度</t>的<t>连续字符</t>构成的序列称之为子串，含有子串的串称之为<t>主串</t>。<br><em> 串相等：指两个串长度相等且对应位置上的字符也相同。
+</em> 串比较：两个串比较大小时以字符的ASCII码值序偶为依据。比较两个串之间的大小。<br><br>3.串的基本操作：<br><br><em> 赋值操作 StrAssign(s,t):将串t的值赋值给s。
+</em> 连接操作 Concat(s,t):将串t连接在s的尾部，形成一个新串。<br><em> 求串长 StrLength(s):返回串s的长度。
+</em> 串比较 StrCompare(s,t):比较两个串的大小返回值 -1、0和1 分别表示 s&lt;t、s=t 和 s&gt;t 4种情况。<br>* 求子串 SubString(s,start,len):返回串s中从start开始的、长度为len的字符序列。<br><br>&gt;串的存储结构<br><br>1.串的静态存储：定长存储结构。<br><br>串的<t>静态存储结构就是串的顺序存储结构</t>，用一组地址连续的存储单元来存储串值的字符序列。<br>由于串中的元素为<t>字符</t>，所以可通过程序语言挺的字符数组定义串的存储空间，也可以根据串长的需要动态申请字符串的空间。<br><br>2.串的链式存储：<font color="red">块链</font>
+
+<p>字符串也可以采用链表作为存储结构，每个结点可以存储一个到多个字符，但要考虑密度问题。<br>在链式存储结构中，结点大小的选择和顺序存储方法中数组空间大小的选择一样重要，它直接影响对串处理的效率。</p>
+<blockquote>
+<p>串的模式匹配</p>
+</blockquote>
+<p>子串的<t>定位操作</t>被称为<font color="red">串的模式匹配</font>，它是各种串处理系统中最重要的运算之一。子串也被称为模式串。</p>
+<p>1.朴素的模式匹配算法</p>
+<p>该算法是从主串的第一个字符起与模式串的第一个字符比较。</p>
+<ul>
+<li>若相等，则继续对后续的逐个字符进行比较。</li>
+<li>否则从主串的第二个字符起与模式串的第一个字符重新比较，直至模式串中每个字符依次和主串中的一个连续的字符序列相等时为止。此时称为匹配成功，否则匹配失败。</li>
+</ul>
+<p>求 匹配成功时字符间的平均比较次数为：</p>
+<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure12.png" alt="匹配成功时字符间的平均比较次数"></p>
+<p>主串的长度为n，模式串的长度为m，设主串的地i个位置开始与模式串匹配成功，而在前i-1趟匹配中，每趟不成功的匹配都是模式串的第一个字符与主串中相应的字符不相同，则在前i-1趟匹配中，字符的比较共进行了i-1次。<br>因第i趟成功匹配的字符比较次数为m，所以总的字符比较次数为(i-1+m)且1&lt;=i&lt;=n-m+1。若在这n-m+1个起始位置上匹配成功的概率相同，则在最好情况下，匹配成功时字符间的平均比较次数由上述公式所示。</p>
+<p>而在最坏的情况下，每一趟不成功的匹配都是模式串的最后一个字符与主串中相应的字符不相等，则主串中新一趟的起始位置为i-m+2。<br>若设第i趟匹配时成功，则在前i-1趟不成功的匹配中，每趟都比较了m次，总共比较了i*m次。因此最坏情况下的平均比较次数为：</p>
+<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure13.png" alt="匹配失败时的平均比较次数"></p>
+<p>2.改进的模式匹配算法</p>
+<p>改进的模式匹配算法又称为KMP算法。其改进之处在于：每当匹配过程中出现相比较的字符不相等时，不需要回溯主串的指针，而是利用已经得到的“部分匹配”的结果，将模式串向后滑，再进行比较。</p>
+<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure14.png" alt="改进的模式匹配算法"></p>
+</t></t>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>穷的要死，求打赏<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/ZFB.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/WX.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/15/clear-oss-file/" class="archive-article-date">
-  	<time datetime="2018-08-15T07:20:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/15/clear-oss-file/">基于laravel框架删除指定的OSS文件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/13/ready-http6/" class="archive-article-date">
-  	<time datetime="2018-08-13T09:47:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/13/ready-http6/">《图解HTTP》笔记 第六章 HTTP首部</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -245,7 +349,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -258,360 +362,98 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/10/ready-http5/" class="archive-article-date">
-  	<time datetime="2018-08-10T13:06:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-10</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/09/20/Clear-the-server-cache/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          清除服务器缓存
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/18/CSharp-HttpClientClass-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSharp-HttpClientClass</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/10/ready-http5/">《图解HTTP》笔记 第五章 与HTTP协作的web服务器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用数据结构"><span class="toc-number">1.1.</span> <span class="toc-text">常用数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#线性表"><span class="toc-number">1.1.1.</span> <span class="toc-text">线性表</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/08/ready-http4/" class="archive-article-date">
-  	<time datetime="2018-08-08T07:49:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/08/ready-http4/">《图解HTTP》笔记 第四章 返回结果的HTTP状态码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/06/ready-http3/" class="archive-article-date">
-  	<time datetime="2018-08-06T11:49:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/06/ready-http3/">《图解HTTP》笔记 第三章 HTTP报文内的HTTP信息</a>
-    </h1>
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTQwMi8xMTkzOA==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/06/ready-http2/" class="archive-article-date">
-  	<time datetime="2018-08-06T07:55:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/06/ready-http2/">《图解HTTP》笔记 第二章 简单的HTTP协议</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/03/ready-http/" class="archive-article-date">
-  	<time datetime="2018-08-03T09:59:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/03/ready-http/">《图解HTTP》笔记 第一章 了解web及网络基础</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/03/ready-blog-testimonials/" class="archive-article-date">
-  	<time datetime="2018-08-03T08:39:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/03/ready-blog-testimonials/">阅读《深度工作：充分使用每一份脑力》</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/01/Laravel-Life/" class="archive-article-date">
-  	<time datetime="2018-08-01T02:41:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/01/Laravel-Life/">Laravel-生命周期</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -642,8 +484,8 @@
  	var yiliaConfig = {
  		mathjax: false,
  		isHome: false,
- 		isPost: false,
- 		isArchive: true,
+ 		isPost: true,
+ 		isArchive: false,
  		isTag: false,
  		isCategory: false,
  		open_in_new: false,

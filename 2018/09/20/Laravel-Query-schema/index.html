@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/8 | 葉蕓榕-随笔</title>
+  <title>操作laravel查询架构器记录 | 葉蕓榕-随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="葉蕓榕的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="葉蕓榕-随笔">
-<meta property="og:url" content="http://yoursite.com/archives/2018/08/index.html">
+  <meta name="description" content="需求表字段 中 有两个字段 ，一个字段是 记录 年月日(pay_date) 另一个是 记录 时分秒(pay_time) 需要实现的是 降序(desc) 排序 实现代码select   boi.* from   sdx_bank_order_info as boi where 1=1 and pay_date &amp;gt;= &amp;quot;2018-08-31&amp;quot; order by CONCAT(">
+<meta name="keywords" content="Laravel,Mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作laravel查询架构器记录">
+<meta property="og:url" content="http://yoursite.com/2018/09/20/Laravel-Query-schema/index.html">
 <meta property="og:site_name" content="葉蕓榕-随笔">
-<meta property="og:description" content="葉蕓榕的个人博客">
+<meta property="og:description" content="需求表字段 中 有两个字段 ，一个字段是 记录 年月日(pay_date) 另一个是 记录 时分秒(pay_time) 需要实现的是 降序(desc) 排序 实现代码select   boi.* from   sdx_bank_order_info as boi where 1=1 and pay_date &amp;gt;= &amp;quot;2018-08-31&amp;quot; order by CONCAT(">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/2018-09-20-01.png">
+<meta property="og:updated_time" content="2018-09-20T09:53:42.601Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="葉蕓榕-随笔">
-<meta name="twitter:description" content="葉蕓榕的个人博客">
+<meta name="twitter:title" content="操作laravel查询架构器记录">
+<meta name="twitter:description" content="需求表字段 中 有两个字段 ，一个字段是 记录 年月日(pay_date) 另一个是 记录 时分秒(pay_time) 需要实现的是 降序(desc) 排序 实现代码select   boi.* from   sdx_bank_order_info as boi where 1=1 and pay_date &amp;gt;= &amp;quot;2018-08-31&amp;quot; order by CONCAT(">
+<meta name="twitter:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/2018-09-20-01.png">
   
     <link rel="alternative" href="/atom.xml" title="葉蕓榕-随笔" type="application/atom+xml">
   
@@ -155,36 +159,111 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Laravel-Query-schema" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/15/clear-oss-file/" class="archive-article-date">
-  	<time datetime="2018-08-15T07:20:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/15/clear-oss-file/">基于laravel框架删除指定的OSS文件</a>
+    <h1 class="article-title" itemprop="name">
+      操作laravel查询架构器记录
     </h1>
   
 
-        <div class="article-info info-on-right">
+        
+        <a href="/2018/09/20/Laravel-Query-schema/" class="archive-article-date">
+  	<time datetime="2018-09-20T08:15:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-20</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+              <span class="btn-bg"></span>
+              <span class="btn-text">文章导航</span>
+              </p>
+    	<div id="toc-article" class="toc-article">
+    	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    		<strong class="toc-title">文章目录</strong>
+               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#需求"><span class="toc-number">1.</span> <span class="toc-text">需求</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实现代码"><span class="toc-number">2.</span> <span class="toc-text">实现代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#laravel架构中实现"><span class="toc-number">3.</span> <span class="toc-text">laravel架构中实现</span></a></li></ol>
+             </div>
+       <script type="text/javascript">
+    	function showToc(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:block");
+    		show_toc_btn.setAttribute("style","display:none");
+    		};
+    	function showBtn(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:none");
+    		show_toc_btn.setAttribute("style","display:block");
+    		};
+       </script>
           
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>表字段 中 有两个字段 ，一个字段是 记录 年月日(pay_date) 另一个是 记录 时分秒(pay_time)</p>
+<p>需要实现的是 降序(desc) 排序</p>
+<h1 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h1><pre><code>select
+  boi.*
+from
+  sdx_bank_order_info as boi
+where 1=1
+and pay_date &gt;= &quot;2018-08-31&quot;
+order by CONCAT(pay_date,&apos; &apos;,pay_time) desc
+</code></pre><p>实际效果如下：</p>
+<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/2018-09-20-01.png" alt="实际效果"></p>
+<h1 id="laravel架构中实现"><a href="#laravel架构中实现" class="headerlink" title="laravel架构中实现"></a>laravel架构中实现</h1><pre><code>$table = DB::connection(&apos;sdx_read_only&apos;)
+    -&gt;table(&apos;bank_order_info&apos;)
+    -&gt;where([
+        [&apos;pay_date&apos;,&apos;&gt;=&apos;,$data[&apos;start_time&apos;]],
+        [&apos;pay_date&apos;,&apos;&lt;=&apos;,$data[&apos;end_time&apos;]]
+        ])
+    -&gt;orderBy(DB::raw(&quot;CONCAT(pay_date,&apos; &apos;,pay_time)&quot;), &apos;desc&apos;)
+    -&gt;paginate(50);
+</code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>穷的要死，求打赏<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/ZFB.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/WX.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -192,11 +271,15 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
+        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -209,409 +292,89 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/13/ready-http6/" class="archive-article-date">
-  	<time datetime="2018-08-13T09:47:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-13</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/20/Clear-the-server-cache/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">清除服务器缓存</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/13/ready-http6/">《图解HTTP》笔记 第六章 HTTP首部</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#需求"><span class="toc-number">1.</span> <span class="toc-text">需求</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实现代码"><span class="toc-number">2.</span> <span class="toc-text">实现代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#laravel架构中实现"><span class="toc-number">3.</span> <span class="toc-text">laravel架构中实现</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/10/ready-http5/" class="archive-article-date">
-  	<time datetime="2018-08-10T13:06:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/10/ready-http5/">《图解HTTP》笔记 第五章 与HTTP协作的web服务器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/08/ready-http4/" class="archive-article-date">
-  	<time datetime="2018-08-08T07:49:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/08/ready-http4/">《图解HTTP》笔记 第四章 返回结果的HTTP状态码</a>
-    </h1>
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTQwMi8xMTkzOA==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/06/ready-http3/" class="archive-article-date">
-  	<time datetime="2018-08-06T11:49:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/06/ready-http3/">《图解HTTP》笔记 第三章 HTTP报文内的HTTP信息</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/06/ready-http2/" class="archive-article-date">
-  	<time datetime="2018-08-06T07:55:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/06/ready-http2/">《图解HTTP》笔记 第二章 简单的HTTP协议</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/03/ready-http/" class="archive-article-date">
-  	<time datetime="2018-08-03T09:59:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/03/ready-http/">《图解HTTP》笔记 第一章 了解web及网络基础</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/03/ready-blog-testimonials/" class="archive-article-date">
-  	<time datetime="2018-08-03T08:39:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/03/ready-blog-testimonials/">阅读《深度工作：充分使用每一份脑力》</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/01/Laravel-Life/" class="archive-article-date">
-  	<time datetime="2018-08-01T02:41:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/01/Laravel-Life/">Laravel-生命周期</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -642,8 +405,8 @@
  	var yiliaConfig = {
  		mathjax: false,
  		isHome: false,
- 		isPost: false,
- 		isArchive: true,
+ 		isPost: true,
+ 		isArchive: false,
  		isTag: false,
  		isCategory: false,
  		open_in_new: false,
