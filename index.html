@@ -180,40 +180,10 @@
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="安装【通过Composer下载】"><a href="#安装【通过Composer下载】" class="headerlink" title="安装【通过Composer下载】"></a>安装【通过Composer下载】</h1><p>执行操作：<br>    composer create-project –prefer-dist yiisoft/yii2-app-basic basic</p>
-<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/study_yii.png" alt="执行当中"></p>
-<h1 id="Windows配置"><a href="#Windows配置" class="headerlink" title="Windows配置"></a>Windows配置</h1><p>因为我使用的是Windows系统，所以用的是NMP的集成环境，将新建个网站然后将文件指向 <font color="red">basic\web</font></p>
-<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/study_yii2.png" alt="配置项"></p>
-<p>再输入域名~Boom~</p>
-<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/study_yii3.png" alt="访问本地网站"></p>
-<p>关于页面内的功能-About<br>当我点了之后，居然弹了警告：</p>
-<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/study_yii4.png" alt="来自about额警告"></p>
-<p>它那句话的提示是要修改 about 这个视图文件。有点意思。</p>
-<p>再有就是 现在这些界面，都使用同一个头部和尾部。头部包含了一个可以在不同页面切换的导航栏。</p>
-<p>然后在底部还带有调试工具，这点跟laravel的扩展挺像的。我点开看了看，海星！</p>
-<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/study_yii5.png" alt="底部的调试工具"></p>
-<p>另外他还有个控制台脚本，就叫yii，用于程序的后台运行和维护任务的。</p>
-<h1 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h1><pre><code>basic/                  应用根目录
-    composer.json       Composer 配置文件, 描述包信息
-    config/             包含应用配置及其它配置
-        console.php     控制台应用配置信息
-        web.php         Web 应用配置信息
-    commands/           包含控制台命令类
-    controllers/        包含控制器类
-    models/             包含模型类
-    runtime/            包含 Yii 在运行时生成的文件，例如日志和缓存文件
-    vendor/             包含已经安装的 Composer 包，包括 Yii 框架自身
-    views/              包含视图文件
-    web/                Web 应用根目录，包含 Web 入口文件
-        assets/         包含 Yii 发布的资源文件（javascript 和 css）
-        index.php       应用入口文件
-    yii                 Yii 控制台命令执行脚本
-</code></pre><p>这么看~跟laravel框架大同小异，官方文档还展示了yii框架的静态结构。</p>
-<p>但最有用的还是看看生命周期吧：</p>
-<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/study_yii6.png" alt="yii生命周期"></p>
-<h1 id="一些规则"><a href="#一些规则" class="headerlink" title="一些规则"></a>一些规则</h1><p>Yii使用 action 前缀 区分普通方法和操作。即大部分的函数 命名都是使用 action 前缀。</p>
-<p>因为时间关系，我并没有做太多深入的研究，这次就记录到这里。</p>
-
+        <h1 id="安装【通过Composer下载】"><a href="#安装【通过Composer下载】" class="headerlink" title="安装【通过Composer下载】"></a>安装【通过Composer下载】</h1>
+        
+          <a class="article-more-a" href="/2018/09/29/Stduay-Yii/#more">more >></a>
+        
       
 
       
@@ -296,66 +266,10 @@
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="数组、矩阵和广义表"><a href="#数组、矩阵和广义表" class="headerlink" title="数组、矩阵和广义表"></a>数组、矩阵和广义表</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><blockquote>
-<p>数组的定义及基本运算。</p>
-</blockquote>
-<h3 id="数组的定义"><a href="#数组的定义" class="headerlink" title="数组的定义"></a>数组的定义</h3><p>数组结构的特点是：</p>
-<ul>
-<li>数据元素数目固定，一旦定义了一个数组结构，就不再有元素的增减变化。</li>
-<li>数据元素具有相同的类型。</li>
-<li>数据元素的下标关系受上下界的约束且下标有序。</li>
-</ul>
-<h3 id="数组的两个基本运算"><a href="#数组的两个基本运算" class="headerlink" title="数组的两个基本运算"></a>数组的两个基本运算</h3><ul>
-<li>给定一组下标，存取相应的数据元素。</li>
-<li>给定一组下标，修改相应的数据元素中某个数据项的值。</li>
-</ul>
-<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><p>1.特殊矩阵</p>
-<p>若矩阵中元素（或非零元素）的分布有一定的规律，则称之为<t>特殊矩阵</t>。常见的特殊矩阵有对称矩阵、三角矩阵和对角矩阵等。</p>
-<p>2.稀疏矩阵</p>
-<p>若非零元素的个数远远少于零元素的个数，且非零元素的分布没有规律，称之为<t>稀疏矩阵</t>。</p>
-<p>3.广义表</p>
-<p>广义表的定义：广义表是线性表的推广，是由零个或多个单元素或子表所组成的有限序列。</p>
-<p>广义表与线性表的区别在于：线性表的元素都是结构上不可分的单元素，而广义表的元素既可以是单元素，也可以是有结构的表。</p>
-<p>广义表的长度指的是广义表中元素的个数。广义表的深度是指广义表展开后所含的括号最大层数。</p>
-<p>广义表的基本操作</p>
-<ul>
-<li>取表头 head(LS):非空广义表LS的第一个元素称之为<t>表头</t>，他可以是一个单元素，也可以是一个子表。</li>
-<li>取表尾 tail(LS):在非空广义表中，除了表头元素之外，由其他元素构成的表称为表尾。非空广义表的表尾必定是一个表。</li>
-</ul>
-<p>广义表的特点：</p>
-<ul>
-<li>广义表可以是多层次的结构，因为广义表的元素可以是子表，而子表的元素还可以是子表；</li>
-<li>广义表中的元素可以是已经定义的广义表的名字，所以一个广义表可以为其他广义表共享；</li>
-<li>广义表可以是一个递归的表，即广义表中的元素也可以是本广义表的名字。</li>
-</ul>
-<p>广义表的存储结构：<br>由于广义表中的元素本身还可以具有结构，<font color="red">它是一种带有层次的非线性结构</font>，因此难以用顺序存储结构表示，通常采用链式结构存储广义表。</p>
-<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><p>1.树的定义：<br>树是n(n&gt;=0)个结点的有限集合。当n=0时称为空树。在任意非空树(n&gt;0)中满足<t>有且仅有一个称为根的结点</t>;<t>其余结点可分为m(m&gt;=0)个互不相交的有限集T1,T2,…,Tm，其中每个集合又都是一颗树，并且称为根结点的子树</t>。</p>
-<p>树的定义(从组成特点来看)是<font color="red">递归的</font>，它表明了树本身的固有特性，也就是说，<t>一棵树由若干棵子树构成，而子树又由更小的子树构成。</t></p>
-<p>而又在<t>数据结构的逻辑关系角度来看<t>,树中的元素之间有明显的层次关系。</t></t></p>
-<p>2.书中的基本概念</p>
-<ul>
-<li>双亲和孩子（父节点与子节点）：对于结点的子树而言，其根被称为该结点的孩子。相应地，该结点称为其子节点的双亲。</li>
-</ul>
-<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure15.png" alt="父节点与子节点"></p>
-<ul>
-<li>兄弟：具有相同双亲的结点互为兄弟结点。</li>
-</ul>
-<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure16.png" alt="兄弟结点"></p>
-<ul>
-<li>结点的度：一个结点的子树的个数记为该结点的度。【如上图：结点1的度为2,结点2的度为0,结点3的度为0】</li>
-<li>叶子结点：也称为终端结点，<font color="red">指 度 为 零 的 结 点</font>。</li>
-<li>内部节点：度不为零的结点称为<t>分支节点或非终端结点</t>。除根结点之外，分支节点也称为<font color="red">内部节点</font>。</li>
-<li>结点的层次：根为第一层，根的孩子为第二层。以此类推，若某节点在第i层，则其孩子结点就在第i+1层。</li>
-<li>树的高度：一棵树的最大层次数记为树的高度（或深度）。</li>
-<li>有序(无序)树：若树中结点的各子树从左到右具有次序，既不能交换，则称该树为有序树，反之则为无序树。</li>
-<li>森林：m(m&gt;=0)棵互不相交的数的集合。</li>
-</ul>
-<p>3.树的遍历算法</p>
-<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><p>1.二叉树的定义<br>  二叉树是n(n&gt;=0)个结点的有限集合。它或者是空树(n=0),或者是由一个根节点及两个不相交的分别称为左、右子树的二叉树所组成。可见二叉树同样具有<t>递归</t>性质。<br>  普通树和二叉树的区别：<font color="red">二叉树的结点的子树要区分左子树和右子树，即使在结点只有一颗子树的情况下也要明确指出该子树是左子树还是右子树。</font></p>
-<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/DataStructure17.png" alt="二叉树与树的区别"></p>
-<p>2.二叉树的运算【遍历】</p>
-<p>3.二叉树的性质</p>
-
+        <h1 id="数组、矩阵和广义表"><a href="#数组、矩阵和广义表" class="headerlink" title="数组、矩阵和广义表"></a>数组、矩阵和广义表</h1>
+        
+          <a class="article-more-a" href="/2018/09/25/StudyDataStructure2/#more">more >></a>
+        
       
 
       
@@ -438,26 +352,10 @@
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>表字段 中 有两个字段 ，一个字段是 记录 年月日(pay_date) 另一个是 记录 时分秒(pay_time)</p>
-<p>需要实现的是 降序(desc) 排序</p>
-<h1 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h1><pre><code>select
-  boi.*
-from
-  sdx_bank_order_info as boi
-where 1=1
-and pay_date &gt;= &quot;2018-08-31&quot;
-order by CONCAT(pay_date,&apos; &apos;,pay_time) desc
-</code></pre><p>实际效果如下：</p>
-<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/2018-09-20-01.png" alt="实际效果"></p>
-<h1 id="laravel架构中实现"><a href="#laravel架构中实现" class="headerlink" title="laravel架构中实现"></a>laravel架构中实现</h1><pre><code>$table = DB::connection(&apos;sdx_read_only&apos;)
-    -&gt;table(&apos;bank_order_info&apos;)
-    -&gt;where([
-        [&apos;pay_date&apos;,&apos;&gt;=&apos;,$data[&apos;start_time&apos;]],
-        [&apos;pay_date&apos;,&apos;&lt;=&apos;,$data[&apos;end_time&apos;]]
-        ])
-    -&gt;orderBy(DB::raw(&quot;CONCAT(pay_date,&apos; &apos;,pay_time)&quot;), &apos;desc&apos;)
-    -&gt;paginate(50);
-</code></pre>
+        <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1>
+        
+          <a class="article-more-a" href="/2018/09/20/Laravel-Query-schema/#more">more >></a>
+        
       
 
       
@@ -1254,10 +1152,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Editor</a>
               </li>
              
@@ -1266,7 +1160,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ready</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1274,11 +1168,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ready</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
