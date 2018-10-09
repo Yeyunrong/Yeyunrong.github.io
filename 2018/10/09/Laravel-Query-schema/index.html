@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>PHP求两个时间的天数间隔 | 葉蕓榕-随笔</title>
+  <title>操作laravel查询架构器记录 | 葉蕓榕-随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="解决方案首先先将参数转为 时间戳 ，再相减同时除以秒时间 例子如下： 123$startLen = strtotime($start);$endLen = strtotime($end);$length = ($endLen - $startLen) / 86400;">
-<meta name="keywords" content="Lumen,Laravel">
+  <meta name="description" content="需求">
+<meta name="keywords" content="Laravel,Mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP求两个时间的天数间隔">
-<meta property="og:url" content="http://yoursite.com/2018/06/08/2018060801/index.html">
+<meta property="og:title" content="操作laravel查询架构器记录">
+<meta property="og:url" content="http://yoursite.com/2018/10/09/Laravel-Query-schema/index.html">
 <meta property="og:site_name" content="葉蕓榕-随笔">
-<meta property="og:description" content="解决方案首先先将参数转为 时间戳 ，再相减同时除以秒时间 例子如下： 123$startLen = strtotime($start);$endLen = strtotime($end);$length = ($endLen - $startLen) / 86400;">
+<meta property="og:description" content="需求">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-03T03:18:53.750Z">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/2018-09-20-01.png">
+<meta property="og:updated_time" content="2018-10-09T07:24:24.685Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP求两个时间的天数间隔">
-<meta name="twitter:description" content="解决方案首先先将参数转为 时间戳 ，再相减同时除以秒时间 例子如下： 123$startLen = strtotime($start);$endLen = strtotime($end);$length = ($endLen - $startLen) / 86400;">
+<meta name="twitter:title" content="操作laravel查询架构器记录">
+<meta name="twitter:description" content="需求">
+<meta name="twitter:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/2018-09-20-01.png">
   
     <link rel="alternative" href="/atom.xml" title="葉蕓榕-随笔" type="application/atom+xml">
   
@@ -157,33 +159,85 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2018060801" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Laravel-Query-schema" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      PHP求两个时间的天数间隔
+      操作laravel查询架构器记录
     </h1>
   
 
         
-        <a href="/2018/06/08/2018060801/" class="archive-article-date">
-  	<time datetime="2018-06-08T11:19:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-08</time>
+        <a href="/2018/10/09/Laravel-Query-schema/" class="archive-article-date">
+  	<time datetime="2018-10-09T07:23:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-09</time>
 </a>
         
       </header>
     
     <!-- 目录内容 -->
     
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+              <span class="btn-bg"></span>
+              <span class="btn-text">文章导航</span>
+              </p>
+    	<div id="toc-article" class="toc-article">
+    	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    		<strong class="toc-title">文章目录</strong>
+               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#需求"><span class="toc-number">1.</span> <span class="toc-text">需求</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实现代码"><span class="toc-number">2.</span> <span class="toc-text">实现代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#laravel架构中实现"><span class="toc-number">3.</span> <span class="toc-text">laravel架构中实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-09-更新操作记录"><span class="toc-number">4.</span> <span class="toc-text">10-09 更新操作记录</span></a></li></ol>
+             </div>
+       <script type="text/javascript">
+    	function showToc(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:block");
+    		show_toc_btn.setAttribute("style","display:none");
+    		};
+    	function showBtn(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:none");
+    		show_toc_btn.setAttribute("style","display:block");
+    		};
+       </script>
+          
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>首先先将参数转为 <strong>时间戳</strong> ，再相减同时除以秒时间</p>
-<p>例子如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$startLen = strtotime($start);</span><br><span class="line">$endLen = strtotime($end);</span><br><span class="line">$length = ($endLen - $startLen) / 86400;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><a id="more"></a>
+<p>表字段 中 有两个字段 ，一个字段是 记录 年月日(pay_date) 另一个是 记录 时分秒(pay_time)</p>
+<p>需要实现的是 降序(desc) 排序</p>
+<h1 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h1><pre><code>select
+  boi.*
+from
+  sdx_bank_order_info as boi
+where 1=1
+and pay_date &gt;= &quot;2018-08-31&quot;
+order by CONCAT(pay_date,&apos; &apos;,pay_time) desc
+</code></pre><p>实际效果如下：</p>
+<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/2018-09-20-01.png" alt="实际效果"></p>
+<h1 id="laravel架构中实现"><a href="#laravel架构中实现" class="headerlink" title="laravel架构中实现"></a>laravel架构中实现</h1><pre><code>$table = DB::connection(&apos;sdx_read_only&apos;)
+    -&gt;table(&apos;bank_order_info&apos;)
+    -&gt;where([
+        [&apos;pay_date&apos;,&apos;&gt;=&apos;,$data[&apos;start_time&apos;]],
+        [&apos;pay_date&apos;,&apos;&lt;=&apos;,$data[&apos;end_time&apos;]]
+        ])
+    -&gt;orderBy(DB::raw(&quot;CONCAT(pay_date,&apos; &apos;,pay_time)&quot;), &apos;desc&apos;)
+    -&gt;paginate(50);
+</code></pre><hr>
+<h1 id="10-09-更新操作记录"><a href="#10-09-更新操作记录" class="headerlink" title="10-09 更新操作记录"></a>10-09 更新操作记录</h1><p>在laravel的查询架构器中使用模糊查询的方法。</p>
+<pre><code>public function selectLog($request)
+{
+    return DB::table(&apos;out_in_business_record&apos;) -&gt; where(function ($query) use ($request) {
+            $request-&gt;wid &amp;&amp; $query-&gt;where(&apos;wid&apos;, $request-&gt;wid );
+            $request-&gt;source_sn &amp;&amp; $query-&gt;where(&apos;source_sn&apos;, $request-&gt;source_sn);
+            $request-&gt;goods_id &amp;&amp; $query-&gt;where(&apos;goods_id&apos;,$request-&gt;goods_id);
+        })
+    -&gt; orderBy(&apos;id&apos;, &apos;desc&apos;) -&gt;paginate(30);
+}
+</code></pre>
       
 
       
@@ -227,11 +281,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Lumen</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
         		</li>
       		
 		</ul>
@@ -261,18 +315,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/06/08/2018060802/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          使用CSharp Net Core记录
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/06/07/2018060702/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">使用vsCode断点调试PHP（支持Lumen\Laravel）</div>
+    <a href="/2018/10/07/hunterrlog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《猎人：荒野的召唤》狩猎记录</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -291,6 +336,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#需求"><span class="toc-number">1.</span> <span class="toc-text">需求</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实现代码"><span class="toc-number">2.</span> <span class="toc-text">实现代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#laravel架构中实现"><span class="toc-number">3.</span> <span class="toc-text">laravel架构中实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-09-更新操作记录"><span class="toc-number">4.</span> <span class="toc-text">10-09 更新操作记录</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
