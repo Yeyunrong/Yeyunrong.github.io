@@ -157,6 +157,97 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2018050702" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/07/2018050702/">Redis 存储记录</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/07/2018050702/" class="archive-article-date">
+  	<time datetime="2018-05-07T07:32:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="将数组信息存储至Redis中"><a href="#将数组信息存储至Redis中" class="headerlink" title="将数组信息存储至Redis中"></a>将数组信息存储至Redis中</h2><p>要求，已 设备号 为 key 其值为一个数组 包含 tmpl 与 data</p>
+<p>解决方案：<br>存储类型：哈希<br>存储方式：通过序列化数组存储数组值，取出时进行反序列化</p>
+<p>序列化方法为：serialize();<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app(&apos;redis&apos;)-&gt;hSet(&apos;OSS : DevicesData&apos;, $var_on,serialize($data_array));</span><br></pre></td></tr></table></figure></p>
+<p>取出时使用反序列化：unserialize();</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Lumen</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-lumen的安装与使用记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -960,93 +1051,6 @@
 
 
   
-    <article id="post-Windows环境下Mix运行npm与Yaim报错" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/12/Windows环境下Mix运行npm与Yaim报错/">Windows环境下Mix运行npm与Yaim报错</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/12/Windows环境下Mix运行npm与Yaim报错/" class="archive-article-date">
-  	<time datetime="2018-04-12T09:50:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-12</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="在Windows环境下使用laravel框架运行npm-与-Yaim-报错的解决方案；"><a href="#在Windows环境下使用laravel框架运行npm-与-Yaim-报错的解决方案；" class="headerlink" title="在Windows环境下使用laravel框架运行npm 与 Yaim 报错的解决方案；"></a>在Windows环境下使用laravel框架运行npm 与 Yaim 报错的解决方案；</h2><h4 id="报错信息："><a href="#报错信息：" class="headerlink" title="报错信息："></a>报错信息：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt; cross-env NODE_ENV=development webpack --progress</span><br><span class="line"></span><br><span class="line">sh: 1: cross-env: not found</span><br><span class="line"></span><br><span class="line">npm ERR! Linux 4.4.0-51-generic</span><br><span class="line">npm ERR! argv &quot;/usr/local/bin/node&quot; &quot;/usr/local/bin/npm&quot; &quot;run&quot; &quot;dev&quot;</span><br><span class="line">npm ERR! node v7.8.0</span><br><span class="line">npm ERR! npm  v4.2.0</span><br><span class="line">npm ERR! file sh</span><br><span class="line">npm ERR! code ELIFECYCLE</span><br><span class="line">npm ERR! errno ENOENT</span><br><span class="line">npm ERR! syscall spawn</span><br><span class="line">npm ERR! Code@1.0.0 dev: `cross-env NODE_ENV=development webpack --progress --hide-modules`</span><br><span class="line">npm ERR! spawn ENOENT</span><br></pre></td></tr></table></figure>
-<h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4>
-        
-          <a class="article-more-a" href="/2018/04/12/Windows环境下Mix运行npm与Yaim报错/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
@@ -1175,7 +1179,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lua</a>
+                <a href="javascript:void(0)" class="js-tag color2">Editor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1187,7 +1191,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Editor</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lua</a>
               </li>
              
               <li class="article-tag-list-item">

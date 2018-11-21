@@ -157,6 +157,113 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-laravel与Redis开发购物车" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/29/laravel与Redis开发购物车/">laravel与Redis开发购物车</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/29/laravel与Redis开发购物车/" class="archive-article-date">
+  	<time datetime="2018-03-29T09:54:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-29</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="首先说下思路"><a href="#首先说下思路" class="headerlink" title="首先说下思路"></a>首先说下思路</h2><ul>
+<li>Redis：<ul>
+<li>数据结构我这里使用的都是Hash数据类型</li>
+<li>共两个Hash：<ul>
+<li>一个是 ‘GoodsInfo’用来存储商品信息，key值为商品ID，value为Json之后的商品详情<blockquote>
+<p><img src="../../../../images/03-29-01.png" alt="Alt text"></p>
+</blockquote>
+</li>
+<li>另外一个则是存储用户购物车信息，每一个用户一个，里面包含了添加的商品的id，还有与之对应的数量<blockquote>
+<p><img src="../../../../images/03-29-02.png" alt="Alt text"><br>此处的命名规则是这样的：Shopping：加上用户id，图中的就代表用户id为1的用户的购物车<br>而key就是商品id，value就是添加商品的数量</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>laravel：<ul>
+<li>因为是要与用户相关，然后我就使用laravel内置的用户登陆认证系统并再其基础上进行修改。
+        
+          <a class="article-more-a" href="/2018/03/29/laravel与Redis开发购物车/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -355,7 +462,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lua</a>
+                <a href="javascript:void(0)" class="js-tag color2">Editor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -367,7 +474,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Editor</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lua</a>
               </li>
              
               <li class="article-tag-list-item">

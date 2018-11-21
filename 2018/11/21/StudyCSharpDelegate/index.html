@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 葉蕓榕-随笔</title>
+  <title>CSharp委托 | 葉蕓榕-随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="葉蕓榕的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="葉蕓榕-随笔">
-<meta property="og:url" content="http://yoursite.com/archives/page/5/index.html">
+  <meta name="description" content="关于委托的认识">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSharp委托">
+<meta property="og:url" content="http://yoursite.com/2018/11/21/StudyCSharpDelegate/index.html">
 <meta property="og:site_name" content="葉蕓榕-随笔">
-<meta property="og:description" content="葉蕓榕的个人博客">
+<meta property="og:description" content="关于委托的认识">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/ready-CSharp-03.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/ready-CSharp-04.png">
+<meta property="og:updated_time" content="2018-11-21T01:53:19.872Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="葉蕓榕-随笔">
-<meta name="twitter:description" content="葉蕓榕的个人博客">
+<meta name="twitter:title" content="CSharp委托">
+<meta name="twitter:description" content="关于委托的认识">
+<meta name="twitter:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/ready-CSharp-03.png">
   
     <link rel="alternative" href="/atom.xml" title="葉蕓榕-随笔" type="application/atom+xml">
   
@@ -155,191 +160,165 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-StudyCSharpDelegate" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSharp委托
+    </h1>
+  
+
+        
+        <a href="/2018/11/21/StudyCSharpDelegate/" class="archive-article-date">
+  	<time datetime="2018-11-21T09:45:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
+</a>
+        
+      </header>
     
+    <!-- 目录内容 -->
+    
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+              <span class="btn-bg"></span>
+              <span class="btn-text">文章导航</span>
+              </p>
+    	<div id="toc-article" class="toc-article">
+    	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    		<strong class="toc-title">文章目录</strong>
+               <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#委托"><span class="toc-number">1.</span> <span class="toc-text">委托</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#声明委托"><span class="toc-number">1.1.</span> <span class="toc-text">声明委托</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用委托"><span class="toc-number">1.2.</span> <span class="toc-text">使用委托</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单的委托示例"><span class="toc-number">1.3.</span> <span class="toc-text">简单的委托示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Action-lt-T-和Func-lt-T-委托"><span class="toc-number">1.4.</span> <span class="toc-text">Action\&lt;T&gt;和Func\&lt;T&gt;委托</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BubbleSorter示例"><span class="toc-number">1.5.</span> <span class="toc-text">BubbleSorter示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多播委托"><span class="toc-number">1.6.</span> <span class="toc-text">多播委托</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匿名方法"><span class="toc-number">1.7.</span> <span class="toc-text">匿名方法</span></a></li></ol></li></ol>
+             </div>
+       <script type="text/javascript">
+    	function showToc(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:block");
+    		show_toc_btn.setAttribute("style","display:none");
+    		};
+    	function showBtn(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:none");
+    		show_toc_btn.setAttribute("style","display:block");
+    		};
+       </script>
+          
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>关于委托的认识<br><a id="more"></a></p>
+</blockquote>
+<ul>
+<li><a href="#delegate">委托</a></li>
+</ul>
+<p><a name="delegate"></a></p>
+<h2 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h2><p><strong>委托</strong>是将++一个方法传递给另一个方法++；</p>
+<p>例如：</p>
+<p><strong>启动线程和任务</strong> 线程适用于并行允许某些新的的执行序列 同时 运行当前的任务。其中的一个基类System.Threading.Thread的Start就是必须传递一个方法作为参数；还有一个是任务，基于System.Threading.Task的Run方法也是将方法作为参数，用于并行执行。代码如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public void test()</span><br><span class="line">&#123;</span><br><span class="line">    Task[] tasks = new Task[2];</span><br><span class="line">    tasks[0] = Task.Run(()=&gt;GatherInfoMonth());//此处就是运用了委托将GatherInfoMonth作为一个参数进行传递</span><br><span class="line">    tasks[1] = Task.Run(()=&gt;GatherUserInfo());</span><br><span class="line">    </span><br><span class="line">    Task.WaitAll(tasks);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private void GatherInfoMonth() &#123; ... &#125;</span><br><span class="line">private void GatherUserInfo() &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>通用库类</strong> 许多库包含执行各种标准任务的代码。这些库通常可以自我包含。<br><strong>时间</strong> 一般是通知代码发生什么事件，在引发事件时，运行的库需要知道应执行哪个方法。这就需要把处理事件的方法作为一个参数传递给委托。</p>
+<p><strong>注意</strong>在<strong>C</strong>和<strong>C++</strong>中，只能提取函数的地址，并作为一个参数传递给它。C没有类型安全性。可以把任何函数传递给需要函数指针的方法。而<strong>.NET Framework</strong>在语法上不允许使用这种直接方法。</p>
+<p>如果要传递方法，就必须把方法的细节封装在一种新类型的对象中，即<strong>委托</strong>。<strong>委托</strong>只是一种特殊类型的对象。其特殊之处在于，我们以前定义的所有对象都包含数据，而<strong>委托</strong>包含的只是++一个或多个方法的地址++。</p>
+<h3 id="声明委托"><a href="#声明委托" class="headerlink" title="声明委托"></a>声明委托</h3><p>定义委托的语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//该函数定义了一个委托InitMethodInvoker，并指定该委托的每个实例都可以包含一个方法的引用，该方法带有一个int参数，并返回void。</span><br><span class="line">delegate void InitMethodInvoker(int x);</span><br><span class="line"></span><br><span class="line">//该委托表示的方法有两个long型参数，返回类型是double类型；</span><br><span class="line">delegate void TwoLongsOp(long first,long second);</span><br><span class="line"></span><br><span class="line">//不带参数的返回一个string类型的委托；</span><br><span class="line">delegate string GetAString();</span><br></pre></td></tr></table></figure>
+<p>根据定义的可见性和委托的作用域，可以在委托的定义上应用任意意见的访问修饰符：public 、private、protected等。</p>
+<blockquote>
+<p> 实际上，“定义一个委托”是指“定义一个新类”，委托实现为派生自基类System.MulticasDelegate的类，System.MulticastDelegate又派生自基类System。Delegate。CSharp编译器能识别这个类，会使用其委托语法，因此我们不需要了解这个类的具体执行情况。这是CSharp与基类共同合作，使编程更易完成的另一个范例。</p>
+</blockquote>
+<h3 id="使用委托"><a href="#使用委托" class="headerlink" title="使用委托"></a>使用委托</h3><p>委托的一个特征是它们的类型是安全的，可以确保被调用的方法的签名是正确的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//定义委托；</span><br><span class="line">private delegate string GetAString();</span><br><span class="line"></span><br><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">	int x = 40;</span><br><span class="line">	//GetAString firstStringMethod = new GetAString(x.ToString);</span><br><span class="line">	//另一种写法；</span><br><span class="line">	GetAString firstStringMethod = x.ToString;</span><br><span class="line">	Console.WriteLine(&quot;String is &#123;0&#125;&quot;,firstStringMethod());</span><br><span class="line">	Console.ReadKey();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>委托可以在需要委托实例的任何地方使用。委托推断也可以用于事件，因为事件基于委托。</p>
+<blockquote>
+<p>给定委托的实例可以引用任何类型的任何对象上的实例方法或静态方法——只要方法的签名匹配于委托的签名即可。</p>
+</blockquote>
+<p>Curency结构有自己的ToString()重载方法和一个与GetCurrencyUnit()的签名相同的静态方法。这样，就可以用一个委托变量调用这些方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 自定义结构体</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">struct Currency</span><br><span class="line">&#123;</span><br><span class="line">	public uint Dollars;</span><br><span class="line">	public ushort Cents;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 构造函数</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	/// &lt;param name=&quot;dollars&quot;&gt;&lt;/param&gt;</span><br><span class="line">	/// &lt;param name=&quot;cents&quot;&gt;&lt;/param&gt;</span><br><span class="line">	public Currency(uint dollars,ushort cents)</span><br><span class="line">	&#123;</span><br><span class="line">		this.Dollars = dollars;</span><br><span class="line">		this.Cents = cents;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 重载Tostring()</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	/// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">	public override string ToString()</span><br><span class="line">	&#123;</span><br><span class="line">		return string.Format(&quot;$&#123;0&#125;.&#123;1,2:00&#125;&quot;,Dollars,Cents);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static string GetCurrencyUnit()</span><br><span class="line">	&#123;</span><br><span class="line">		return &quot;Dollar&quot;;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 静态 强制转换；</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	/// &lt;param name=&quot;value&quot;&gt;&lt;/param&gt;</span><br><span class="line">	public static explicit operator Currency(float value)</span><br><span class="line">	&#123;</span><br><span class="line">		checked</span><br><span class="line">		&#123;</span><br><span class="line">			uint dollars = (uint)value;</span><br><span class="line">			ushort cents = (ushort)((value - dollars) * 100);</span><br><span class="line">			return new Currency(dollars,cents);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 静态 隐式转换</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	/// &lt;param name=&quot;value&quot;&gt;&lt;/param&gt;</span><br><span class="line">	public static implicit operator float(Currency value)</span><br><span class="line">	&#123;</span><br><span class="line">		return value.Dollars + (value.Cents / 100.0f);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 静态 隐式转换</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	/// &lt;param name=&quot;value&quot;&gt;&lt;/param&gt;</span><br><span class="line">	public static implicit operator Currency(uint value)</span><br><span class="line">	&#123;</span><br><span class="line">		return new Currency(value, 0);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 静态 隐式转换</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	/// &lt;param name=&quot;value&quot;&gt;&lt;/param&gt;</span><br><span class="line">	public static implicit operator uint(Currency value)</span><br><span class="line">	&#123;</span><br><span class="line">		return value.Dollars;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">	//定义委托；</span><br><span class="line">	private delegate string GetAString();</span><br><span class="line"></span><br><span class="line">	static void Main(string[] args)</span><br><span class="line">	&#123;</span><br><span class="line">		int x = 40;</span><br><span class="line">		//GetAString firstStringMethod = new GetAString(x.ToString);</span><br><span class="line">		//另一种写法；</span><br><span class="line">		GetAString firstStringMethod = x.ToString;</span><br><span class="line"></span><br><span class="line">		Console.WriteLine(&quot;String is &#123;0&#125;&quot;,firstStringMethod());</span><br><span class="line"></span><br><span class="line">		Currency balance = new Currency(34, 50);</span><br><span class="line"></span><br><span class="line">		//此处调用的为 重载后的tostring；</span><br><span class="line">		firstStringMethod = balance.ToString;</span><br><span class="line">		Console.WriteLine(&quot;String is &#123;0&#125;&quot;,firstStringMethod());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		firstStringMethod = new GetAString(Currency.GetCurrencyUnit);</span><br><span class="line">		Console.WriteLine(&quot;String is &#123;0&#125;&quot;, firstStringMethod());</span><br><span class="line"></span><br><span class="line">		Console.ReadKey();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String is 40</span><br><span class="line">String is $34.50</span><br><span class="line">String is Dollar</span><br></pre></td></tr></table></figure></p>
+<h3 id="简单的委托示例"><a href="#简单的委托示例" class="headerlink" title="简单的委托示例"></a>简单的委托示例</h3><p>在这个示例中，定义一个类MathsOperations，它有两个静态方法，对double类型的值执行两个操作，然后使用委托调用这些方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">class MathOperations</span><br><span class="line">&#123;</span><br><span class="line">	public static double MultiplyByTwo(double value)</span><br><span class="line">	&#123;</span><br><span class="line">		return value = 2;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static double Square(double value)</span><br><span class="line">	&#123;</span><br><span class="line">		return value * value;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 声明委托；</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">/// &lt;param name=&quot;x&quot;&gt;&lt;/param&gt;</span><br><span class="line">/// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">delegate double DoubleOP(double x);</span><br><span class="line"></span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">	static void Main(string[] args)</span><br><span class="line">	&#123;</span><br><span class="line">		DoubleOP[] operation = &#123; MathOperations.MultiplyByTwo, MathOperations.Square &#125;;</span><br><span class="line"></span><br><span class="line">		for (int i = 0; i &lt; operation.Length; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			Console.WriteLine(&quot;Using operations[&#123;0&#125;]:&quot;, i);</span><br><span class="line">			ProcessAndDisplayNumber(operation[i], 2.0);</span><br><span class="line">			ProcessAndDisplayNumber(operation[i], 7.94);</span><br><span class="line">			ProcessAndDisplayNumber(operation[i], 1.414);</span><br><span class="line">			Console.WriteLine();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		Console.ReadKey();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	static void ProcessAndDisplayNumber(DoubleOP action, double value)</span><br><span class="line">	&#123;</span><br><span class="line">		double result = action(value);</span><br><span class="line">		Console.WriteLine(&quot;Value is &#123;0&#125;,result of operation is &#123;1&#125;&quot;,value,result);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中一段代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ProcessAndDisplayNumber(operation[i], 2.0);</span><br></pre></td></tr></table></figure></p>
+<p>其中传递了委托名，但不带任何参数。假定operations[i]是一个委托，其语法是：</p>
+<ul>
+<li>operations[i]表示“这个委托”。换言之，就是委托表示的方法。</li>
+<li>operations<a href="2.0">i</a>表示“实际上调用这个方法，参数放在圆括号内”。</li>
+</ul>
+<p>ProcessAndDisplayNumber()方法定义为把一个委托作为其第一个参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static void ProcessAndDisplayNumber(Double action,double value)</span><br></pre></td></tr></table></figure></p>
+<p>然后，在这个方法中，调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">double result = action(value);</span><br></pre></td></tr></table></figure></p>
+<p>这实际上是调用action（表示无参无返回值的委托）系列实例封装的方法，其返回结果存在result中。</p>
+<h3 id="Action-lt-T-和Func-lt-T-委托"><a href="#Action-lt-T-和Func-lt-T-委托" class="headerlink" title="Action\&lt;T>和Func\&lt;T>委托"></a>Action\&lt;T>和Func\&lt;T>委托</h3><p>除了为每个参数和返回类型定义一个新委托类型之外，还可以使用Action\&lt;T>和Func\&lt;T>委托。</p>
+<p>泛型Action\&lt;T>委托表示引用一个void返回类型的方法。因为这个委托类存在不同的变化，所以可以传递至多16个不同的参数类型。没有泛型参数的action类可调用没有参数的方法。</p>
+<p>Func\&lt;T>委托可以以类似的方法使用。Func\&lt;T>允许调用带返回类型的方法。与Action&lt;\T&gt;类似，Func\&lt;T>也定义了不同的变体，至少也可以传递16个参数类型和一个返回类型。Func\<out tresult\="">委托类型可以调用带返回类型且无参数的方法。</out></p>
+<h3 id="BubbleSorter示例"><a href="#BubbleSorter示例" class="headerlink" title="BubbleSorter示例"></a>BubbleSorter示例</h3><p><strong>BubbleSorter【即冒牌排序算法】</strong>++其适用于以小组数字++，因为对于大量数字（超过十个），还有更加高效的算法。对于给int排序，进行冒泡排序的方法如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">int[] sortArray = &#123; 8, 5, 2, 1, 6, 3 &#125;;</span><br><span class="line">bool swapped = true;</span><br><span class="line">do</span><br><span class="line">&#123;</span><br><span class="line">	swapped = false;</span><br><span class="line">	for (int i = 0; i &lt; sortArray.Length - 1; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (sortArray[i] &lt; sortArray[i + 1])</span><br><span class="line">		&#123;</span><br><span class="line">			int temp = sortArray[i];</span><br><span class="line">			sortArray[i] = sortArray[i + 1];</span><br><span class="line">			sortArray[i + 1] = temp;</span><br><span class="line">			swapped = true;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125; while (swapped);</span><br><span class="line"></span><br><span class="line">for (int i = 0; i &lt; sortArray.Length; i++)</span><br><span class="line">&#123;</span><br><span class="line">	Console.WriteLine(sortArray[i]);</span><br><span class="line">&#125;</span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">8</span><br><span class="line">6</span><br><span class="line">5</span><br><span class="line">3</span><br><span class="line">2</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+<p>其非常适合int，但我们希望Sort()方法能给任何对象排序。换言之，如果某段客户端包含Currency结构数组或==自定义的其他类和结构==，就需要对该数组排序。因为是自定义的结构或其他结构，那么就不能使用“&gt;”比较运算符，应该在委托中传递一个封装的方法，这个方法进行比较。</p>
+<p>对于接受类型T的范类型方法Sort\&lt;T>(),需要一个比较方法，其中两个参数的类型是T，if比较的返回类型是bool类型。这个方法可以从Func\&lt;T1,T2,Tresult>委托中引用，其中T1和T2的类型相同：Func\&lt;T,T,bool></p>
+<p>定义一个函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static public void Sort &lt;T&gt;(List&lt;T&gt; sortArray,Func&lt;T,T,bool&gt;comparison)</span><br></pre></td></tr></table></figure></p>
+<p>实例代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace Demo</span><br><span class="line">&#123;</span><br><span class="line">	class BubblesSorter</span><br><span class="line">	&#123;</span><br><span class="line">		static public void Sort&lt;T&gt;(IList&lt;T&gt; sortArray, Func&lt;T, T, bool&gt; comparison)</span><br><span class="line">		&#123;</span><br><span class="line">			bool swapped = true;</span><br><span class="line">			do</span><br><span class="line">			&#123;</span><br><span class="line">				swapped = false;</span><br><span class="line">				for (int i = 0; i &lt; sortArray.Count - 1; i++)</span><br><span class="line">				&#123;</span><br><span class="line">					//判断工资大小；</span><br><span class="line">					if (comparison(sortArray[i + 1], sortArray[i]))</span><br><span class="line">					&#123;</span><br><span class="line">						T temp = sortArray[i];</span><br><span class="line">						sortArray[i] = sortArray[i + 1];</span><br><span class="line">						sortArray[i + 1] = temp;</span><br><span class="line">						swapped = true;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; while (swapped);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	class Employee</span><br><span class="line">	&#123;</span><br><span class="line">		</span><br><span class="line">		public string Name &#123; get; private set; &#125;</span><br><span class="line">		public decimal Salary &#123; get; private set; &#125;</span><br><span class="line"></span><br><span class="line">		public Employee(string name, decimal salary)</span><br><span class="line">		&#123;</span><br><span class="line">			this.Name = name;</span><br><span class="line">			this.Salary = salary;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		//该处重写Tostring是因为之后的WriteLine会自动调用该方法；</span><br><span class="line">		public override string ToString()</span><br><span class="line">		&#123;</span><br><span class="line">			//此处的 C 是货币格式的意思；</span><br><span class="line">			return string.Format(&quot;&#123;0&#125;,&#123;1:c&#125;&quot;, Name, Salary);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		//返回布尔值</span><br><span class="line">		public static bool CompareSalary(Employee el, Employee e2)</span><br><span class="line">		&#123;</span><br><span class="line">			return el.Salary &lt; e2.Salary;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	class Program</span><br><span class="line">	&#123;</span><br><span class="line">		static void Main(string[] args)</span><br><span class="line">		&#123;</span><br><span class="line">			Employee[] employees = &#123;</span><br><span class="line">				new Employee(&quot;Bugs Bunny&quot;,20000),</span><br><span class="line">				new Employee(&quot;Elmer Fudd&quot;,10000),</span><br><span class="line">				new Employee(&quot;Daffy Duck&quot;,25000),</span><br><span class="line">				new Employee(&quot;Wile Leghorn&quot;,1000000.38m),</span><br><span class="line">				new Employee(&quot;Foghorn Leghorna&quot;,23000),</span><br><span class="line">				new Employee(&quot;RoadRunner&quot;,50000),</span><br><span class="line">			&#125;;</span><br><span class="line">			//此处使用的就是委托 ，将 Employee 对象的 CompareSalary 方法传递</span><br><span class="line">			BubblesSorter.Sort(employees, Employee.CompareSalary);</span><br><span class="line"></span><br><span class="line">			foreach (var employee in employees)</span><br><span class="line">			&#123;</span><br><span class="line">				//此处输出会调用已经重写了的Tostring</span><br><span class="line">				Console.WriteLine(employee);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			Console.ReadKey();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="多播委托"><a href="#多播委托" class="headerlink" title="多播委托"></a>多播委托</h3><p>==<strong>多播委托</strong>==：++多次显示调用委托且该委托包含多个方法++。如果调用多播委托，就==可以按顺序连续调用多个方法==；否则只能得到委托调用的最后一个方法的结果。</p>
+<blockquote>
+<p>注意：书中描述必须返回 void 但是实际上并非如此。实践才是检验真理的唯一办法。</p>
+</blockquote>
+<p>代码实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace Demo</span><br><span class="line">&#123;</span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 多播委托</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	public class MultiDelegate</span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		private delegate int DemoMultiDelegate(out int x);</span><br><span class="line"></span><br><span class="line">		private static int Show1(out int x)</span><br><span class="line"></span><br><span class="line">		&#123;</span><br><span class="line"></span><br><span class="line">			x = 1;</span><br><span class="line"></span><br><span class="line">			Console.WriteLine(&quot;This is the first show method:&quot; + x);</span><br><span class="line"></span><br><span class="line">			return x;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		private static int Show2(out int x)</span><br><span class="line"></span><br><span class="line">		&#123;</span><br><span class="line"></span><br><span class="line">			x = 2;</span><br><span class="line"></span><br><span class="line">			Console.WriteLine(&quot;This is the second show method:&quot; + x);</span><br><span class="line"></span><br><span class="line">			return x;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		private static int Show3(out int x)</span><br><span class="line"></span><br><span class="line">		&#123;</span><br><span class="line"></span><br><span class="line">			x = 3;</span><br><span class="line"></span><br><span class="line">			Console.WriteLine(&quot;This is the third show method:&quot; + x);</span><br><span class="line"></span><br><span class="line">			return x;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		/// &lt;summary&gt;</span><br><span class="line">		/// 调用多播委托</span><br><span class="line">		/// &lt;/summary&gt;</span><br><span class="line">		public void Show()</span><br><span class="line"></span><br><span class="line">		&#123;</span><br><span class="line">			//为委托添加方法，委托可以识别+， +=， -， -=运算符</span><br><span class="line">			//可以按下面的方式为委托添加方法</span><br><span class="line">			DemoMultiDelegate dmd = new DemoMultiDelegate(Show1);</span><br><span class="line"></span><br><span class="line">			dmd += new DemoMultiDelegate(Show2);</span><br><span class="line"></span><br><span class="line">			dmd += new DemoMultiDelegate(Show3);//检查结果</span><br><span class="line"></span><br><span class="line">			int x = 5;</span><br><span class="line"></span><br><span class="line">			int y = dmd(out x);</span><br><span class="line"></span><br><span class="line">			Console.WriteLine(y);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	class Program</span><br><span class="line">	&#123;</span><br><span class="line">		static void Main(string[] args)</span><br><span class="line">		&#123;</span><br><span class="line"></span><br><span class="line">			MultiDelegate multiDelegate = new MultiDelegate();</span><br><span class="line"></span><br><span class="line">			multiDelegate.Show();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			Console.ReadKey();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行结果如下：<br><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/ready-CSharp-03.png" alt="多播委托运行结果"></p>
+<p>多播委托案例二：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace Demo</span><br><span class="line">&#123;</span><br><span class="line">	/*</span><br><span class="line">     * 以下的实例是一个关于多播委托的实例</span><br><span class="line">     * 多播委托应注意：</span><br><span class="line">     * ① 委托可以包含多个方法，成为多播委托</span><br><span class="line">     * ② 因为要返回多个方法，所以委托的签名就必须返回void</span><br><span class="line">     * ③ 多播委托的方法链的的顺序未经严格定义，所以避免使用任何依赖调用顺序的委托</span><br><span class="line">     * ④ 经过定义的多播委托逐个调用委托的方法，如果有任何一个出现错误，</span><br><span class="line">     *    可以根据需要手动迭代下一个委托方法</span><br><span class="line">     */</span><br><span class="line">	//DisplayMethod类有三个静态方法</span><br><span class="line">	class DisplayMethod</span><br><span class="line">	&#123;</span><br><span class="line">		//返回类型要定义为void</span><br><span class="line">		public static void one()</span><br><span class="line">		&#123;</span><br><span class="line">			Console.WriteLine(&quot;one&quot;);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		public static void two()</span><br><span class="line">		&#123;</span><br><span class="line">			Console.WriteLine(&quot;two&quot;);</span><br><span class="line">			throw new Exception();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		public static void three()</span><br><span class="line">		&#123;</span><br><span class="line">			Console.WriteLine(&quot;three&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//定义委托</span><br><span class="line">	public delegate void MyDelegate();</span><br><span class="line"></span><br><span class="line">	class Program</span><br><span class="line">	&#123;</span><br><span class="line">		static void Main(string[] args)</span><br><span class="line">		&#123;</span><br><span class="line">			//为委托添加方法，委托可以识别+， +=， -， -=运算符</span><br><span class="line">			//可以按下面的方式为委托添加方法</span><br><span class="line">			MyDelegate myOne = DisplayMethod.one;</span><br><span class="line">			MyDelegate myTwo = DisplayMethod.two;</span><br><span class="line">			MyDelegate myDelegate = myOne + myTwo;</span><br><span class="line">			myDelegate += DisplayMethod.three;</span><br><span class="line"></span><br><span class="line">			/* 可以用下面方法调用被委托的三个方法</span><br><span class="line">             * myDelegate();</span><br><span class="line">             * 也可以通过调用委托的GetInvocationList()方法来返回一个委托方法的数组，</span><br><span class="line">             * 以迭代调用委托中的方法</span><br><span class="line">             */</span><br><span class="line">			foreach (MyDelegate my in myDelegate.GetInvocationList())</span><br><span class="line">			&#123;</span><br><span class="line">				try</span><br><span class="line">				&#123;</span><br><span class="line">					my();</span><br><span class="line">				&#125;</span><br><span class="line">				catch</span><br><span class="line">				&#123;</span><br><span class="line">					Console.WriteLine(&quot;throw error &quot;);</span><br><span class="line">					//如果有错误从委托列表中删除错误的方法</span><br><span class="line">					myDelegate -= my;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			Console.WriteLine(&quot;删除方法two后。。。 。。。&quot;);</span><br><span class="line"></span><br><span class="line">			//删除后的列表调用，只剩下one和three</span><br><span class="line">			foreach (MyDelegate my in myDelegate.GetInvocationList())</span><br><span class="line">			&#123;</span><br><span class="line">				my();</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			Console.Read();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行结果如下：<br><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/ready-CSharp-04.png" alt="运行结果-4"></p>
+<h3 id="匿名方法"><a href="#匿名方法" class="headerlink" title="匿名方法"></a>匿名方法</h3><p>另一种使用委托的方法就是<strong>匿名方法</strong>。匿名方法是用作委托的==参数==的一段代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace Demo</span><br><span class="line">&#123;</span><br><span class="line">	class Program</span><br><span class="line">	&#123;</span><br><span class="line">		static void Main(string[] args)</span><br><span class="line">		&#123;</span><br><span class="line">			string mid = &quot;, middle part&quot;;</span><br><span class="line"></span><br><span class="line">			Func&lt;string, string&gt; anonDel = delegate (string param)</span><br><span class="line">			 &#123;</span><br><span class="line">				 param += mid;</span><br><span class="line">				 param += &quot; and this was added to the string&quot;;</span><br><span class="line">				 return param;</span><br><span class="line">			 &#125;;</span><br><span class="line"></span><br><span class="line">			Console.WriteLine(anonDel(&quot;Start of string&quot;));</span><br><span class="line"></span><br><span class="line">			Console.ReadKey();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：<br>    Start of string, middle part and this was added to the string</p>
+<ul>
+<li>Func&lt;string,string&gt;委托接受一个字符串参数，返回一个字符串。</li>
+<li>anonDEl是这种委托类的变量。不是把方法名赋予这个变量，而是使用一段简单的代码：它前面是关键字delegate，后面是一个字符串参数；</li>
+</ul>
+<p>匿名方法的有点就是减少了要编写的代码。不必定义仅由委托使用的方法。</p>
+<p>在使用匿名方法是需要遵循两条规则：</p>
+<ol>
+<li>在匿名方法终不能使用跳转语句(break、goto或continue)跳到该匿名函数的外部，反之亦然。匿名方法外部的跳转不能跳转到该匿名方法的内部。</li>
+<li>在匿名方法内部不能访问不安全代码。另外，也不能访问在匿名方法外部使用的ref和out参数。但可以使用在匿名方法外部定义的其他变量。</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>穷的要死，求打赏<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/ZFB.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/WX.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/07/2018050702/" class="archive-article-date">
-  	<time datetime="2018-05-07T07:32:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/07/2018050702/">Redis 存储记录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Lumen</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/04/lumen的安装与使用记录/" class="archive-article-date">
-  	<time datetime="2018-05-04T11:07:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/04/lumen的安装与使用记录/">lumen的安装与使用记录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Lumen</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/23/Laravel导出一个表格包含多个子表/" class="archive-article-date">
-  	<time datetime="2018-04-23T12:18:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/23/Laravel导出一个表格包含多个子表/">Laravel导出多个表格为同一个文件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/23/CSharp窗口-将表格中的信息打印到指定图片上/" class="archive-article-date">
-  	<time datetime="2018-04-23T01:15:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/23/CSharp窗口-将表格中的信息打印到指定图片上/">CSharp窗口-将表格中的信息打印到指定图片上</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -351,7 +330,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -364,330 +343,88 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/18/Laravel扩展阿里云OSS对象存储/" class="archive-article-date">
-  	<time datetime="2018-04-18T11:05:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-18</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/20/CSharpStringFormat/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">String类的Format的调用详解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/18/Laravel扩展阿里云OSS对象存储/">Laravel扩展阿里云OSS对象存储</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OSS对象存储</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#委托"><span class="toc-number">1.</span> <span class="toc-text">委托</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#声明委托"><span class="toc-number">1.1.</span> <span class="toc-text">声明委托</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用委托"><span class="toc-number">1.2.</span> <span class="toc-text">使用委托</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单的委托示例"><span class="toc-number">1.3.</span> <span class="toc-text">简单的委托示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Action-lt-T-和Func-lt-T-委托"><span class="toc-number">1.4.</span> <span class="toc-text">Action\&lt;T&gt;和Func\&lt;T&gt;委托</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BubbleSorter示例"><span class="toc-number">1.5.</span> <span class="toc-text">BubbleSorter示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多播委托"><span class="toc-number">1.6.</span> <span class="toc-text">多播委托</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匿名方法"><span class="toc-number">1.7.</span> <span class="toc-text">匿名方法</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/18/关于如何关闭Laravel中严格模式的两种方法/" class="archive-article-date">
-  	<time datetime="2018-04-18T10:48:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/18/关于如何关闭Laravel中严格模式的两种方法/">关于如何关闭Laravel中严格模式的两种方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/13/Mysql查询出来的数据无法合并的解决方案/" class="archive-article-date">
-  	<time datetime="2018-04-13T12:35:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/13/Mysql查询出来的数据无法合并的解决方案/">Mysql查询出来的数据无法合并的解决方案</a>
-    </h1>
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTQwMi8xMTkzOA==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/13/CSharp扩展LiteDB数据库/" class="archive-article-date">
-  	<time datetime="2018-04-13T12:21:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/13/CSharp扩展LiteDB数据库/">C#扩展LiteDB数据库</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CSharp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Net//" class="article-tag-list-link color4">Net</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/13/laravel导入表格获取数据查询MySQL/" class="archive-article-date">
-  	<time datetime="2018-04-13T01:41:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/13/laravel导入表格获取数据查询MySQL/">laravel导入表格获取数据查询MySQL</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/12/使用CSharp与MySQL导出导入报表/" class="archive-article-date">
-  	<time datetime="2018-04-12T10:11:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/12/使用CSharp与MySQL导出导入报表/">使用C#与MySQL导出导入报表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CSharp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Net//" class="article-tag-list-link color4">Net</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/4/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><a class="extend next" rel="next" href="/archives/page/6/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -719,8 +456,8 @@
  	var yiliaConfig = {
  		mathjax: false,
  		isHome: false,
- 		isPost: false,
- 		isArchive: true,
+ 		isPost: true,
+ 		isArchive: false,
  		isTag: false,
  		isCategory: false,
  		open_in_new: false,
