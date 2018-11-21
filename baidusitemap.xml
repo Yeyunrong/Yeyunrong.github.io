@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/11/21/VsGitError/</loc>
+    <lastmod>2018-11-21T08:40:39.500Z</lastmod>
+    <data>
+        <display>
+        <title>VS编辑器操作Git报Authentication failed[转]</title>
+        <pubTime>2018-11-21T08:38:11.000Z</pubTime>
+        
+        <tag>Editor</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/11/21/StudyCSharpDelegate/</loc>
     <lastmod>2018-11-21T01:53:19.872Z</lastmod>
     <data>
@@ -911,9 +931,9 @@
         <title>laravel与Redis开发购物车</title>
         <pubTime>2018-03-29T09:54:43.000Z</pubTime>
         
-        <tag>Laravel</tag>
-         
         <tag>Redis</tag>
+         
+        <tag>Laravel</tag>
          
          
            
@@ -1211,9 +1231,9 @@
         <title>Laravel使用Redis缓存锁</title>
         <pubTime>2018-07-20T08:35:18.000Z</pubTime>
         
-        <tag>Laravel</tag>
-         
         <tag>Redis</tag>
+         
+        <tag>Laravel</tag>
          
          
            
