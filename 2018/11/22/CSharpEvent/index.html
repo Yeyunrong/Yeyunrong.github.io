@@ -6,20 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Lumen|Laravel框架臃肿解决方案 | 葉蕓榕-随笔</title>
+  <title>C#事件 | 葉蕓榕-随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概况一般使用传统的MVC框架，导致Controller与Mondel的雍宗肥大，难以维护。 解决方案一般Controller处理的是都是事务逻辑，而Model处理的是事务资料信息。 因此，将Controller与Model精简，并重新定义Controller与Model的功能。 在文件目录新建 文件夹 Server 服务层。 用于处理事务的核心逻辑 再在文件目录新建 文件夹 Repositiori">
-<meta name="keywords" content="Lumen,Laravel">
+  <meta name="description" content="事件基于委托，为委托提供了一种发布/订阅机制。">
+<meta name="keywords" content="CSharp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lumen|Laravel框架臃肿解决方案">
-<meta property="og:url" content="http://yoursite.com/2018/06/07/2018060701/index.html">
+<meta property="og:title" content="C#事件">
+<meta property="og:url" content="http://yoursite.com/2018/11/22/CSharpEvent/index.html">
 <meta property="og:site_name" content="葉蕓榕-随笔">
-<meta property="og:description" content="概况一般使用传统的MVC框架，导致Controller与Mondel的雍宗肥大，难以维护。 解决方案一般Controller处理的是都是事务逻辑，而Model处理的是事务资料信息。 因此，将Controller与Model精简，并重新定义Controller与Model的功能。 在文件目录新建 文件夹 Server 服务层。 用于处理事务的核心逻辑 再在文件目录新建 文件夹 Repositiori">
+<meta property="og:description" content="事件基于委托，为委托提供了一种发布/订阅机制。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-03T03:19:04.646Z">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/Event/ready-CSharp-Event-01.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/Event/ready-CSharp-WeakEvent-01.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/Event/ready-CSharp-WeakEvent-02.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/Event/ready-CSharp-WeakEvent-03.png">
+<meta property="og:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/Event/ready-CSharp-WeakEvent-04.png">
+<meta property="og:updated_time" content="2018-11-22T08:46:56.513Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lumen|Laravel框架臃肿解决方案">
-<meta name="twitter:description" content="概况一般使用传统的MVC框架，导致Controller与Mondel的雍宗肥大，难以维护。 解决方案一般Controller处理的是都是事务逻辑，而Model处理的是事务资料信息。 因此，将Controller与Model精简，并重新定义Controller与Model的功能。 在文件目录新建 文件夹 Server 服务层。 用于处理事务的核心逻辑 再在文件目录新建 文件夹 Repositiori">
+<meta name="twitter:title" content="C#事件">
+<meta name="twitter:description" content="事件基于委托，为委托提供了一种发布/订阅机制。">
+<meta name="twitter:image" content="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/Event/ready-CSharp-Event-01.png">
   
     <link rel="alternative" href="/atom.xml" title="葉蕓榕-随笔" type="application/atom+xml">
   
@@ -157,59 +163,94 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2018060701" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-CSharpEvent" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Lumen|Laravel框架臃肿解决方案
+      C#事件
     </h1>
   
 
         
-        <a href="/2018/06/07/2018060701/" class="archive-article-date">
-  	<time datetime="2018-06-07T03:31:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-07</time>
+        <a href="/2018/11/22/CSharpEvent/" class="archive-article-date">
+  	<time datetime="2018-11-22T08:44:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-22</time>
 </a>
         
       </header>
     
     <!-- 目录内容 -->
     
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+              <span class="btn-bg"></span>
+              <span class="btn-text">文章导航</span>
+              </p>
+    	<div id="toc-article" class="toc-article">
+    	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    		<strong class="toc-title">文章目录</strong>
+               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#弱事件"><span class="toc-number">2.</span> <span class="toc-text">弱事件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#弱事件管理器"><span class="toc-number">2.1.</span> <span class="toc-text">弱事件管理器</span></a></li></ol></li></ol>
+             </div>
+       <script type="text/javascript">
+    	function showToc(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:block");
+    		show_toc_btn.setAttribute("style","display:none");
+    		};
+    	function showBtn(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:none");
+    		show_toc_btn.setAttribute("style","display:block");
+    		};
+       </script>
+          
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="概况"><a href="#概况" class="headerlink" title="概况"></a>概况</h1><p>一般使用传统的<strong>MVC</strong>框架，导致<strong>Controller与Mondel</strong>的雍宗肥大，难以维护。</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>一般<strong>Controller</strong>处理的是都是事务逻辑，而<strong>Model</strong>处理的是事务资料信息。</p>
-<p>因此，将<strong>Controller与Model</strong>精简，并重新定义<strong>Controller与Model</strong>的功能。</p>
-<p>在文件目录新建 文件夹 <strong>Server</strong> 服务层。</p>
-<p>用于处理事务的核心逻辑</p>
-<p>再在文件目录新建 文件夹 <strong>Repositiories</strong> 仓储文件层</p>
-<p>用于处理调配数据资料<br><a id="more"></a></p>
-<p>那么整个流程为：</p>
-<p><strong><em>Controller-&gt;Server-&gt;Repositiories-&gt;Model</em></strong></p>
-<p>控制器 获取用户请求并做处理，比如验证请求数据权限等，再调用 服务层 所有业务逻辑处理都将在这一层完成，如果需要调用数据，那么就调用仓储文件，<br>仓储文件调用数据，仓储文件关联Model，Model文件设置数据库配置文件。</p>
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><h2 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h2><p>先引入服务层</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use App\Service\ZP\OSSService;</span><br></pre></td></tr></table></figure>
-<p>注入服务层</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public function __construct(OSSService $OSSService)</span><br><span class="line">&#123;</span><br><span class="line">    $this-&gt;ossService = $OSSService;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>此时我们的控制器仅 <strong>接收用户请求数据</strong> 、 <strong>验证数据</strong> 与 <strong>传递数据</strong> 的功能，数据处理交由 <strong>服务层</strong> 处理</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public function selectFileAll(Request $request)</span><br><span class="line">&#123;</span><br><span class="line">    $status = $request-&gt;get(&apos;status&apos;);</span><br><span class="line">    $keywork = $request-&gt;get(&apos;keyword&apos;);</span><br><span class="line">    $info = $this-&gt;ossService-&gt;selectAllFile($this-&gt;user-&gt;id,$request-&gt;get(&apos;pageSize&apos;),$status,$keywork,$request-&gt;get(&apos;page&apos;));</span><br><span class="line">    return $this-&gt;returnInfo($info[&apos;state&apos;],null,$info[&apos;data&apos;],$info[&apos;other&apos;]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="服务层"><a href="#服务层" class="headerlink" title="服务层"></a>服务层</h2><p>引用并注入所需要的<strong>仓储文件</strong>，因为我们操作多个表，若采用严格的 <strong>Eloquent Class</strong> 关系，那就需要关联多个<strong>仓储文件</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">use App\Repositories\ZP\Role_Has_ModelRepositories;</span><br><span class="line">use App\Repositories\ZP\DevicesRepositories;</span><br><span class="line">use App\Repositories\ZP\Users\UsersRepositories;</span><br><span class="line"></span><br><span class="line">class OSSService</span><br><span class="line">&#123;</span><br><span class="line">    protected $userRepositories;</span><br><span class="line">    protected $devicesRepositories;</span><br><span class="line">    protected $ossRepositories;</span><br><span class="line"></span><br><span class="line">    public function __construct(DevicesRepositories $devicesRepositories,UsersRepositories $usersRepositories,OSSRepositories $OSSRepositories)</span><br><span class="line">    &#123;</span><br><span class="line">        $this-&gt;userRepositories = $usersRepositories;</span><br><span class="line">        $this-&gt;devicesRepositories = $devicesRepositories;</span><br><span class="line">        $this-&gt;ossRepositories = $OSSRepositories;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如上所示，一共关联了三个仓储文件，分别是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Role_Has_ModelRepositories</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DevicesRepositories</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UsersRepositories</span><br></pre></td></tr></table></figure>
-<p>在<strong>服务层</strong>中我们处理调用<strong>仓储文件</strong>获取的数据，或调用<strong>仓储文件</strong>中的方法对数据进行修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public function deleteFile($var_url,$var_buckename)</span><br><span class="line">&#123;</span><br><span class="line">    $data = $this-&gt;ossRepositories-&gt;selectRes($var_url);</span><br><span class="line">    if(count($data)&lt;=0)</span><br><span class="line">    &#123;</span><br><span class="line">        return array(&apos;state&apos; =&gt; 1,&apos;mes&apos; =&gt; &apos;期望删除的资源并不存在&apos;,&apos;data&apos; =&gt; array(), &apos;other&apos;=&gt; null);</span><br><span class="line">    &#125;</span><br><span class="line">    OSS::publicDeleteObject($var_buckename,$var_url);</span><br><span class="line">    $this-&gt;ossRepositories-&gt;deleteRes($var_url);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="仓储层"><a href="#仓储层" class="headerlink" title="仓储层"></a>仓储层</h2><p>在这一层中，基于严格的 <strong>Eloquent Class</strong> 关系我们仅引用相关的Model，想多表关联查询，或是使用laravel的查询构造器不熟练的，直接引用DB也是可以的，一切以 易读易写 为准</p>
-<p>引用Model<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use App\Models\Zp\ResourcesZP;</span><br></pre></td></tr></table></figure></p>
-<p>我这里是通过框架自带的构造器操作表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public function selectUserRes($uid,$varindex)</span><br><span class="line">&#123;</span><br><span class="line">    $data = ResourcesZP::where(&apos;res_user_id&apos;,&apos;=&apos;,$uid)-&gt;simplePaginate($varindex);</span><br><span class="line">    return $data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>仓储层仅仅操作数据</strong></p>
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><p>很简单仅做表对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">namespace App\Models\Zp;</span><br><span class="line"></span><br><span class="line">use Illuminate\Database\Eloquent\Model;</span><br><span class="line"></span><br><span class="line">class DataZP extends Model</span><br><span class="line">&#123;</span><br><span class="line">    protected $table = &apos;zp_data&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>以更细、更小的、并确保功能的单一性来切割MVC，此处只讲了控制器与Model，关于View模块，本人并没有多少见解</p>
+        <blockquote>
+<p>事件基于委托，为委托提供了一种发布/订阅机制。<br><a id="more"></a></p>
+</blockquote>
+<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p><b>事件</b>基于委托，为委托提供了一种发布/订阅机制。<br><b>事件（Event）</b> 基本上说是一个用户操作，如按键、点击、鼠标移动等等，或者是一些出现，如系统生成的通知。应用程序需要在事件发生时响应事件。例如，中断。事件是用于进程间通信。</p>
+<p>事件有两大功能：</p>
+<ol>
+<li>发布器(publisher)类：是一个包含事件和委托定义的对象。事件和委托之间的联系也定义在这个对象中。发布器(publisher)类的对象调用这个事件，并通知其他对象。</li>
+<li>订阅器(subscriber)类：是一个接受事件并提供事件处理程序的对象。在发布器(publisher)类中的委托调用订阅器(subscriber)类中的方法(事件处理程序)。</li>
+</ol>
+<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/Event/ready-CSharp-Event-01.png" alt="事件流程图解"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace Demo</span><br><span class="line">&#123;</span><br><span class="line">	public delegate void SalaryCompute();   //声明一个代理类；</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 触发事件的方法；</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	public class Employee</span><br><span class="line">	&#123;</span><br><span class="line">		//定义事件，将其与代理绑定；</span><br><span class="line">		public event SalaryCompute OnSalaryCompute;</span><br><span class="line"></span><br><span class="line">		//触发事件的方法；</span><br><span class="line">		public virtual void FireEvent()</span><br><span class="line">		&#123;</span><br><span class="line">			if (OnSalaryCompute != null)</span><br><span class="line">			&#123;</span><br><span class="line">				//触发事件；</span><br><span class="line">				OnSalaryCompute();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	class Program</span><br><span class="line">	&#123;</span><br><span class="line">		/// &lt;summary&gt;</span><br><span class="line">		/// 事件处理函数；</span><br><span class="line">		/// &lt;/summary&gt;</span><br><span class="line">		public void SalaryHandler()</span><br><span class="line">		&#123;</span><br><span class="line">			Console.WriteLine(&quot;处理..&quot;);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		static void Main(string[] args)</span><br><span class="line">		&#123;</span><br><span class="line">			Employee ep = new Employee();</span><br><span class="line">			Program pg = new Program();</span><br><span class="line">			//注册事件；</span><br><span class="line">			ep.OnSalaryCompute += new SalaryCompute(pg.SalaryHandler);</span><br><span class="line">			//触发事件；</span><br><span class="line">			ep.FireEvent();</span><br><span class="line"></span><br><span class="line">			Console.ReadKey();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>通过 += 创建一个订阅。同理 -= 可以取消订阅；</li>
+<li>启动事件通过自己定义的 FireEvent；</li>
+</ul>
+<h1 id="弱事件"><a href="#弱事件" class="headerlink" title="弱事件"></a>弱事件</h1><p>对于事件，如果发布者和订阅者直接连接的话，会发生垃圾回收问题，而弱事件则可以解决这种问题。</p>
+<p>如果事件源对象比监听者对象具有更长的生存期，且事件监听者没有被其他对象引用也不再需要该事件，这时使用正常的.Net事件将导致内存泄漏：事件源对象在内存中保持了应该被垃圾(garbage)回收的监听对象的引用。</p>
+<blockquote>
+<p>本质上事件是一对 Add/Remove 方法。</p>
+</blockquote>
+<p>使用WeakEvenManager作为发布器和事件监听类之间的中介。</p>
+<h2 id="弱事件管理器"><a href="#弱事件管理器" class="headerlink" title="弱事件管理器"></a>弱事件管理器</h2><p>要使用弱事件，需要创建一个派生自 WeakEventManager 类的类。WeakEventManager 类在程序集 WindowsBase 的名称空间System.Windows中定义。</p>
+<p>注意：WindowsBase 要添加引用；</p>
+<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/Event/ready-CSharp-WeakEvent-01.png" alt="弱事件报错"></p>
+<ol>
+<li>在解决方案中添加引用：</li>
+</ol>
+<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/Event/ready-CSharp-WeakEvent-02.png" alt="在解决方案中添加引用"></p>
+<ol start="2">
+<li>添加步骤：</li>
+</ol>
+<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/Event/ready-CSharp-WeakEvent-03.png" alt="添加步骤"></p>
+<ol start="3">
+<li>处理结果：</li>
+</ol>
+<p><img src="https://yeyunrong-blog.oss-cn-shenzhen.aliyuncs.com/%20Blog/ReadyCSharp/Event/ready-CSharp-WeakEvent-04.png" alt="结果"></p>
+<p>WeekCarInfoEventManager 类是弱事件管理器类，它管理指定事件的发布程序和监听器之间的连接。</p>
+<p>实例代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using System.Windows;</span><br><span class="line"></span><br><span class="line">namespace Demo</span><br><span class="line">&#123;</span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 自定义事件参数</span><br><span class="line">	/// 此处定义一个事件发布者</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	public class CarInfoEventArgs : EventArgs </span><br><span class="line">	&#123;</span><br><span class="line">		public CarInfoEventArgs(string car)</span><br><span class="line">		&#123;</span><br><span class="line">			this.Car = car;</span><br><span class="line">		&#125;</span><br><span class="line">		public string Car &#123; get; private set; &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 汽车销售商作为事件发布者</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	public class CarDealer</span><br><span class="line">	&#123;</span><br><span class="line">		public event EventHandler&lt;CarInfoEventArgs&gt; NewCarInfo;</span><br><span class="line"></span><br><span class="line">		public void NewCar(string car)</span><br><span class="line">		&#123;</span><br><span class="line">			Console.WriteLine(&quot;汽车经销商, 新车 &#123;0&#125;&quot;, car);</span><br><span class="line">			RaiseNewCarInfo(car);</span><br><span class="line">		&#125;</span><br><span class="line">		public virtual void RaiseNewCarInfo(string car)</span><br><span class="line">		&#123;</span><br><span class="line">			EventHandler&lt;CarInfoEventArgs&gt; newCarInfo = NewCarInfo;</span><br><span class="line">			if (newCarInfo != null)</span><br><span class="line">			&#123;</span><br><span class="line">				newCarInfo(this, new CarInfoEventArgs(car));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 弱事件管理器</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	public class WeakCarInfoEventManager : WeakEventManager</span><br><span class="line">	&#123;</span><br><span class="line">		/// &lt;summary&gt;</span><br><span class="line">		/// 添加弱事件至事件链；</span><br><span class="line">		/// &lt;/summary&gt;</span><br><span class="line">		/// &lt;param name=&quot;source&quot;&gt;&lt;/param&gt;</span><br><span class="line">		/// &lt;param name=&quot;listener&quot;&gt;&lt;/param&gt;</span><br><span class="line">		public static void AddListener(object source, IWeakEventListener listener)</span><br><span class="line">		&#123;</span><br><span class="line">			CurrentManager.ProtectedAddListener(source, listener);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		/// &lt;summary&gt;</span><br><span class="line">		/// 移除事件至事件链；</span><br><span class="line">		/// &lt;/summary&gt;</span><br><span class="line">		/// &lt;param name=&quot;source&quot;&gt;&lt;/param&gt;</span><br><span class="line">		/// &lt;param name=&quot;listener&quot;&gt;&lt;/param&gt;</span><br><span class="line">		public static void RemoveListener(object source, IWeakEventListener listener)</span><br><span class="line">		&#123;</span><br><span class="line">			CurrentManager.ProtectedRemoveListener(source, listener);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		/// &lt;summary&gt;</span><br><span class="line">		/// 实例化事件管理器；</span><br><span class="line">		/// &lt;/summary&gt;</span><br><span class="line">		public static WeakCarInfoEventManager CurrentManager</span><br><span class="line">		&#123;</span><br><span class="line">			get</span><br><span class="line">			&#123;</span><br><span class="line">				var manager = GetCurrentManager(typeof(WeakCarInfoEventManager))</span><br><span class="line">				as WeakCarInfoEventManager;</span><br><span class="line">				if (manager == null)</span><br><span class="line">				&#123;</span><br><span class="line">					manager = new WeakCarInfoEventManager();</span><br><span class="line">					SetCurrentManager(typeof(WeakCarInfoEventManager), manager);</span><br><span class="line">				&#125;</span><br><span class="line">				return manager;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		/// &lt;summary&gt;</span><br><span class="line">		/// 添加事件链时将执行此处；</span><br><span class="line">		/// &lt;/summary&gt;</span><br><span class="line">		/// &lt;param name=&quot;source&quot;&gt;&lt;/param&gt;</span><br><span class="line">		protected override void StartListening(object source)</span><br><span class="line">		&#123;</span><br><span class="line">			(source as CarDealer).NewCarInfo += CarDealer_NewCarInfo;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		/// &lt;summary&gt;</span><br><span class="line">		/// 直接执行事件；传递事件数据；</span><br><span class="line">		/// &lt;/summary&gt;</span><br><span class="line">		/// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;</span><br><span class="line">		/// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;</span><br><span class="line">		void CarDealer_NewCarInfo(object sender, CarInfoEventArgs e)</span><br><span class="line">		&#123;</span><br><span class="line">			DeliverEvent(sender, e);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		protected override void StopListening(object source)</span><br><span class="line">		&#123;</span><br><span class="line">			(source as CarDealer).NewCarInfo -= CarDealer_NewCarInfo;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 定义订阅者</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	public class Consumer : IWeakEventListener</span><br><span class="line">	&#123;</span><br><span class="line">		private string name;</span><br><span class="line">		public Consumer(string name)</span><br><span class="line">		&#123;</span><br><span class="line">			this.name = name;</span><br><span class="line">		&#125;</span><br><span class="line">		public void NewCarIsHere(object sender, CarInfoEventArgs e)</span><br><span class="line">		&#123;</span><br><span class="line">			Console.WriteLine(&quot;&#123;0&#125;:的车 &#123;1&#125; 是新的&quot;, name, e.Car);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		//通过该方法来处理弱事件管理器推送过来的订阅信息</span><br><span class="line">		public bool ReceiveWeakEvent(Type managerType, object sender, EventArgs e)</span><br><span class="line">		&#123;</span><br><span class="line">			NewCarIsHere(sender, e as CarInfoEventArgs);</span><br><span class="line">			return true;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	class Program</span><br><span class="line">	&#123;</span><br><span class="line">		static void Main(string[] args)</span><br><span class="line">		&#123;</span><br><span class="line">			//实例化事件发布者</span><br><span class="line">			var carDealer = new CarDealer();</span><br><span class="line">			//实例化事件订阅者</span><br><span class="line">			var cons = new Consumer(&quot;我是订阅者1&quot;);</span><br><span class="line">			//通过弱事件管理器把发布者和订阅者关联起来					</span><br><span class="line">			WeakCarInfoEventManager.AddListener(carDealer, cons);</span><br><span class="line"></span><br><span class="line">			//发布者激发事件。在此cons收到订阅消息</span><br><span class="line">			carDealer.NewCar(&quot;奔驰&quot;);</span><br><span class="line">			//再次实例化一个订阅者</span><br><span class="line">			var cons1 = new Consumer(&quot;我是订阅者2&quot;);</span><br><span class="line">			//关联发布者和订阅者</span><br><span class="line">			WeakCarInfoEventManager.AddListener(carDealer, cons1);</span><br><span class="line"></span><br><span class="line">			//发布者再次激发事件,此时两个订阅者都能收到订阅消息</span><br><span class="line">			carDealer.NewCar(&quot;宝马&quot;);</span><br><span class="line">			Console.ReadKey();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>实现了弱事件模式后，发布程序和监听器就不再强连接了。当不再引用侦听器时，他就会被垃圾回收。</p>
+</blockquote>
 
       
 
@@ -254,11 +295,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Lumen</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CSharp</a>
         		</li>
       		
 		</ul>
@@ -270,7 +307,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
+        			<a href="/categories/Net//" class="article-tag-list-link color4">Net</a>
         		</li>
       		
 		</ul>
@@ -288,18 +325,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/06/07/2018060702/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          使用vsCode断点调试PHP（支持Lumen\Laravel）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/06/06/2018060601/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CSharp应用MongoDB</div>
+    <a href="/2018/11/21/StudyCSharpDelegate/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSharp委托</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -318,6 +346,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#弱事件"><span class="toc-number">2.</span> <span class="toc-text">弱事件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#弱事件管理器"><span class="toc-number">2.1.</span> <span class="toc-text">弱事件管理器</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
