@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 葉蕓榕-随笔</title>
+  <title>C#LINQ实践记录 | 葉蕓榕-随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="葉蕓榕的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="葉蕓榕-随笔">
-<meta property="og:url" content="http://yoursite.com/archives/2018/page/2/index.html">
+  <meta name="description" content="语言集查询(Language Integrated Query,LINQ)集成了C#编程语言中的查询语法，可以用相同的语法访问不同的数据源。LINQ提供了不同数据源的抽象层，所以可以使用相同的语法。">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#LINQ实践记录">
+<meta property="og:url" content="http://yoursite.com/2018/11/28/CSharpLINQ/index.html">
 <meta property="og:site_name" content="葉蕓榕-随笔">
-<meta property="og:description" content="葉蕓榕的个人博客">
+<meta property="og:description" content="语言集查询(Language Integrated Query,LINQ)集成了C#编程语言中的查询语法，可以用相同的语法访问不同的数据源。LINQ提供了不同数据源的抽象层，所以可以使用相同的语法。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-28T02:10:31.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="葉蕓榕-随笔">
-<meta name="twitter:description" content="葉蕓榕的个人博客">
+<meta name="twitter:title" content="C#LINQ实践记录">
+<meta name="twitter:description" content="语言集查询(Language Integrated Query,LINQ)集成了C#编程语言中的查询语法，可以用相同的语法访问不同的数据源。LINQ提供了不同数据源的抽象层，所以可以使用相同的语法。">
   
     <link rel="alternative" href="/atom.xml" title="葉蕓榕-随笔" type="application/atom+xml">
   
@@ -155,172 +157,95 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CSharpLINQ" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C#LINQ实践记录
+    </h1>
+  
+
+        
+        <a href="/2018/11/28/CSharpLINQ/" class="archive-article-date">
+  	<time datetime="2018-11-28T02:09:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-28</time>
+</a>
+        
+      </header>
     
+    <!-- 目录内容 -->
+    
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+              <span class="btn-bg"></span>
+              <span class="btn-text">文章导航</span>
+              </p>
+    	<div id="toc-article" class="toc-article">
+    	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    		<strong class="toc-title">文章目录</strong>
+               <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实例"><span class="toc-number">1.</span> <span class="toc-text">实例</span></a></li></ol>
+             </div>
+       <script type="text/javascript">
+    	function showToc(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:block");
+    		show_toc_btn.setAttribute("style","display:none");
+    		};
+    	function showBtn(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:none");
+    		show_toc_btn.setAttribute("style","display:block");
+    		};
+       </script>
+          
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>语言集查询(Language Integrated Query,LINQ)集成了C#编程语言中的查询语法，可以用相同的语法访问不同的数据源。LINQ提供了不同数据源的抽象层，所以可以使用相同的语法。<br><a id="more"></a></p>
+</blockquote>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using System.Windows;</span><br><span class="line"></span><br><span class="line">namespace Demo</span><br><span class="line">&#123;</span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 武林高手类；</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	class MartialArtsMaster</span><br><span class="line">	&#123;</span><br><span class="line">		public int ID &#123; get; set; &#125;</span><br><span class="line">		public string Name &#123; get; set; &#125;</span><br><span class="line">		public int Age &#123; get; set; &#125;</span><br><span class="line">		public string MenPai &#123; get; set; &#125;</span><br><span class="line">		public string KongFu &#123; get; set; &#125;</span><br><span class="line">		public int Level &#123; get; set; &#125;</span><br><span class="line"></span><br><span class="line">		public override string ToString()</span><br><span class="line">		&#123;</span><br><span class="line">			return string.Format(&quot;&#123;0&#125;--&#123;1&#125;--&#123;2&#125;--&#123;3&#125;--&#123;4&#125;--&#123;5&#125;&quot;, ID, Name, Age, MenPai, KongFu, Level);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 武林绝学类</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	class KongFu</span><br><span class="line">	&#123;</span><br><span class="line">		public int ID &#123; get; set; &#125;</span><br><span class="line">		public string Name &#123; get; set; &#125;</span><br><span class="line">		public int Power &#123; get; set; &#125;</span><br><span class="line"></span><br><span class="line">		public override string ToString()</span><br><span class="line">		&#123;</span><br><span class="line">			return string.Format(&quot;&#123;0&#125;--&#123;1&#125;--&#123;2&#125;&quot;, ID, Name, Power);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	class Program</span><br><span class="line">	&#123;</span><br><span class="line">		static void Main(string[] args)</span><br><span class="line">		&#123;</span><br><span class="line">			List&lt;MartialArtsMaster&gt; masterList = new List&lt;MartialArtsMaster&gt;()</span><br><span class="line">			&#123;</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 1,Name = &quot;HR&quot;,Age = 18,MenPai = &quot;GB&quot;,KongFu = &quot;DGBF&quot;,Level = 89&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 2,Name = &quot;HQG&quot;,Age = 70,MenPai = &quot;GB&quot;,KongFu = &quot;DGBF&quot;,Level = 10&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 3,Name = &quot;GJ&quot;,Age = 22,MenPai = &quot;GB&quot;,KongFu = &quot;DGBF&quot;,Level = 10&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 4,Name = &quot;RWX&quot;,Age = 50,MenPai = &quot;MJ&quot;,KongFu = &quot;KHBD&quot;,Level = 10&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 5,Name = &quot;DFBB&quot;,Age = 35,MenPai = &quot;MJ&quot;,KongFu = &quot;KHBD&quot;,Level = 540&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 6,Name = &quot;LPZ&quot;,Age = 23,MenPai = &quot;HS&quot;,KongFu = &quot;KHBD&quot;,Level = 404&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 7,Name = &quot;YBQ&quot;,Age = 50,MenPai = &quot;HS&quot;,KongFu = &quot;KHBD&quot;,Level = 40&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 8,Name = &quot;LHC&quot;,Age = 23,MenPai = &quot;HS&quot;,KongFu = &quot;DGJJ&quot;,Level = 4045&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 9,Name = &quot;MCF&quot;,Age = 45,MenPai = &quot;THD&quot;,KongFu = &quot;JYZJ&quot;,Level = 78&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 10,Name = &quot;HYS&quot;,Age = 28,MenPai = &quot;THD&quot;,KongFu = &quot;TZSG&quot;,Level = 78&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 11,Name = &quot;FQY&quot;,Age = 46,MenPai = &quot;HS&quot;,KongFu = &quot;DGJJ&quot;,Level = 78&#125;,</span><br><span class="line">			&#125;;</span><br><span class="line"></span><br><span class="line">			List&lt;KongFu&gt; kongFuList = new List&lt;KongFu&gt;()</span><br><span class="line">			&#123;</span><br><span class="line">				new KongFu() &#123;ID=1,Name = &quot;DGBF&quot;,Power = 100&#125;,</span><br><span class="line">				new KongFu() &#123;ID=2,Name = &quot;XLSBZ&quot;,Power = 45&#125;,</span><br><span class="line">				new KongFu() &#123;ID=3,Name = &quot;KHBD&quot;,Power = 75&#125;,</span><br><span class="line">				new KongFu() &#123;ID=4,Name = &quot;DGJJ&quot;,Power = 45&#125;,</span><br><span class="line">				new KongFu() &#123;ID=5,Name = &quot;JYZJ&quot;,Power = 39&#125;,</span><br><span class="line">				new KongFu() &#123;ID=6,Name = &quot;TZSG&quot;,Power = 2&#125;,</span><br><span class="line">			&#125;;</span><br><span class="line"></span><br><span class="line">			//基本表达式写法;</span><br><span class="line">			//var res = from m in masterList where m.MenPai == &quot;GB&quot; select m.Name;</span><br><span class="line"></span><br><span class="line">			//联合查询 使用多个from in</span><br><span class="line">			/*var res = from m in masterList</span><br><span class="line">					  from k in kongFuList</span><br><span class="line">					  where m.KongFu == k.Name &amp;&amp; k.Power &gt; 90</span><br><span class="line">					  select new &#123; master = m, kongfu = k &#125;;*/</span><br><span class="line"></span><br><span class="line">			//联合查询二 使用扩展方法进行联合查询;</span><br><span class="line">			/*var res = masterList.SelectMany(m =&gt; kongFuList, (m, k) =&gt; new &#123; master = m, kongfu = k &#125;)</span><br><span class="line">				.Where(x =&gt; x.master.KongFu == x.kongfu.Name &amp;&amp; x.kongfu.Power &gt; 90);*/</span><br><span class="line"></span><br><span class="line">			//使用 JOIN ON 进行联合查询;</span><br><span class="line">			/*var res = from m in masterList</span><br><span class="line">					  join k in kongFuList on m.KongFu equals k.Name</span><br><span class="line">					  select new &#123; master = m, kongfu = k &#125;;*/</span><br><span class="line"></span><br><span class="line">			//对查询的结果进行排序 - 级别升序，年龄降序</span><br><span class="line">			/*var res = from m in masterList</span><br><span class="line">					  orderby m.Level, m.Age descending</span><br><span class="line">					  select m;*/</span><br><span class="line"></span><br><span class="line">			//使用扩展方法的形式对查询结果进行排序。</span><br><span class="line">			//var res = masterList.OrderBy(m =&gt; m.Level).ThenByDescending(m =&gt; m.Age);</span><br><span class="line"></span><br><span class="line">			//分组查询;</span><br><span class="line">			/*var res = from k in kongFuList</span><br><span class="line">					  join m in masterList on k.Name equals m.KongFu</span><br><span class="line">					  into groups //根据 k 分组</span><br><span class="line">					  orderby groups.Count()</span><br><span class="line">					  select new &#123; kongfu = k, count = groups.Count() &#125;;*/</span><br><span class="line"></span><br><span class="line">			//以自身字段分组;</span><br><span class="line">			/*var res = from m in masterList</span><br><span class="line">					  group m by m.MenPai into g</span><br><span class="line">					  select new &#123; MenPai = g.Key, Count = g.Count() &#125;;*/</span><br><span class="line"></span><br><span class="line">			/*foreach (var item in res)</span><br><span class="line">			&#123;</span><br><span class="line">				Console.WriteLine(item);</span><br><span class="line">			&#125;*/</span><br><span class="line"></span><br><span class="line">			//判断数据里是否有所需要的数据</span><br><span class="line">			Console.WriteLine(masterList.Any(m =&gt; m.MenPai == &quot;少林寺&quot;));//任一满足，则返回true;</span><br><span class="line">			Console.WriteLine(masterList.All(m =&gt; m.MenPai == &quot;丐帮&quot;));//所有满足，则返回true；</span><br><span class="line"></span><br><span class="line">			Console.ReadKey();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>鼓励一下作者，增加写作的动力~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/ZFB.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/WX.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/25/StudyDataStructure2/" class="archive-article-date">
-  	<time datetime="2018-09-25T07:01:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/25/StudyDataStructure2/">《数据库系统工程师教程-中级》 笔记 第二章数据结构(2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/20/Clear-the-server-cache/" class="archive-article-date">
-  	<time datetime="2018-09-20T03:21:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/20/Clear-the-server-cache/">清除服务器缓存</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/19/StudyDataStructure/" class="archive-article-date">
-  	<time datetime="2018-09-19T08:02:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/19/StudyDataStructure/">《数据库系统工程师教程-中级》 笔记 第二章数据结构(1)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/18/CSharp-HttpClientClass-1/" class="archive-article-date">
-  	<time datetime="2018-09-18T01:39:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/18/CSharp-HttpClientClass-1/">CSharp-HttpClientClass</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -332,7 +257,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -345,318 +270,88 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/11/HigConcurrencPprograCcomparison/" class="archive-article-date">
-  	<time datetime="2018-09-11T02:08:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-11</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/27/StudyDataStructure8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《数据库系统工程师教程-中级》第八章 关系数据库 笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/11/HigConcurrencPprograCcomparison/">高并发方案对比（仅扣减库存部分）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实例"><span class="toc-number">1.</span> <span class="toc-text">实例</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/07/Csharp-Connection-MySQL/" class="archive-article-date">
-  	<time datetime="2018-09-07T12:02:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/07/Csharp-Connection-MySQL/">Csharp连接MYSQL核心代码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CSharp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Net//" class="article-tag-list-link color4">Net</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/07/CSharp-Timer-Class/" class="archive-article-date">
-  	<time datetime="2018-09-07T10:14:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/07/CSharp-Timer-Class/">CSharp定时类</a>
-    </h1>
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTQwMi8xMTkzOA==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CSharp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Net//" class="article-tag-list-link color4">Net</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/15/clear-oss-file/" class="archive-article-date">
-  	<time datetime="2018-08-15T07:20:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/15/clear-oss-file/">基于laravel框架删除指定的OSS文件</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/13/ready-http6/" class="archive-article-date">
-  	<time datetime="2018-08-13T09:47:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/13/ready-http6/">《图解HTTP》笔记 第六章 HTTP首部</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/10/ready-http5/" class="archive-article-date">
-  	<time datetime="2018-08-10T13:06:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/10/ready-http5/">《图解HTTP》笔记 第五章 与HTTP协作的web服务器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/page/3/">3</a><a class="page-number" href="/archives/2018/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2018/page/7/">7</a><a class="extend next" rel="next" href="/archives/2018/page/3/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -688,8 +383,8 @@
  	var yiliaConfig = {
  		mathjax: false,
  		isHome: false,
- 		isPost: false,
- 		isArchive: true,
+ 		isPost: true,
+ 		isArchive: false,
  		isTag: false,
  		isCategory: false,
  		open_in_new: false,
