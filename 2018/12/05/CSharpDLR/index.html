@@ -7,18 +7,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <meta name="msvalidate.01" content="3FE4A7C8E5E74A299D97CCBFB32968A4" />
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/9 | 葉蕓榕-随笔</title>
+  <title>C#动态语言简记 | 葉蕓榕-随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="葉蕓榕的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="葉蕓榕-随笔">
-<meta property="og:url" content="http://yoursite.com/archives/2018/09/index.html">
+  <meta name="description" content="DLR 概念：DLR是Dynamic Language Runtime的一部分。DLR是添加到CLR的一系列服务，它允许添加动态语言，如Ruby和Python，并使C#具备和这些动态语言相同的某些动态功能。">
+<meta name="keywords" content="CSharp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#动态语言简记">
+<meta property="og:url" content="http://yoursite.com/2018/12/05/CSharpDLR/index.html">
 <meta property="og:site_name" content="葉蕓榕-随笔">
-<meta property="og:description" content="葉蕓榕的个人博客">
+<meta property="og:description" content="DLR 概念：DLR是Dynamic Language Runtime的一部分。DLR是添加到CLR的一系列服务，它允许添加动态语言，如Ruby和Python，并使C#具备和这些动态语言相同的某些动态功能。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-05T07:06:27.330Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="葉蕓榕-随笔">
-<meta name="twitter:description" content="葉蕓榕的个人博客">
+<meta name="twitter:title" content="C#动态语言简记">
+<meta name="twitter:description" content="DLR 概念：DLR是Dynamic Language Runtime的一部分。DLR是添加到CLR的一系列服务，它允许添加动态语言，如Ruby和Python，并使C#具备和这些动态语言相同的某些动态功能。">
   
     <link rel="alternative" href="/atom.xml" title="葉蕓榕-随笔" type="application/atom+xml">
   
@@ -156,221 +158,108 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CSharpDLR" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C#动态语言简记
+    </h1>
+  
+
+        
+        <a href="/2018/12/05/CSharpDLR/" class="archive-article-date">
+  	<time datetime="2018-12-05T07:03:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-05</time>
+</a>
+        
+      </header>
     
+    <!-- 目录内容 -->
+    
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+              <span class="btn-bg"></span>
+              <span class="btn-text">文章导航</span>
+              </p>
+    	<div id="toc-article" class="toc-article">
+    	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    		<strong class="toc-title">文章目录</strong>
+               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DLR"><span class="toc-number">1.</span> <span class="toc-text">DLR</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dynamic-类型"><span class="toc-number">1.1.</span> <span class="toc-text">dynamic 类型</span></a></li></ol></li></ol>
+             </div>
+       <script type="text/javascript">
+    	function showToc(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:block");
+    		show_toc_btn.setAttribute("style","display:none");
+    		};
+    	function showBtn(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:none");
+    		show_toc_btn.setAttribute("style","display:block");
+    		};
+       </script>
+          
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="DLR"><a href="#DLR" class="headerlink" title="DLR"></a>DLR</h1><blockquote>
+<p><t>概念</t>：DLR是Dynamic Language Runtime的一部分。DLR是添加到CLR的一系列服务，它允许添加动态语言，如Ruby和Python，并使C#具备和这些动态语言相同的某些动态功能。<br><a id="more"></a></p>
+</blockquote>
+<h2 id="dynamic-类型"><a href="#dynamic-类型" class="headerlink" title="dynamic 类型"></a>dynamic 类型</h2><p>daynamic类型允许编写忽略编译期间的类型检查的代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using System.Windows;</span><br><span class="line"></span><br><span class="line">namespace Demo</span><br><span class="line">&#123;</span><br><span class="line">	</span><br><span class="line">	class Program</span><br><span class="line">	&#123;</span><br><span class="line">		static void Main(string[] args)</span><br><span class="line">		&#123;</span><br><span class="line">			var staticPerson = new Person();</span><br><span class="line">			dynamic dynamicPerson = new Person();</span><br><span class="line">			//正确的赋值与调用；</span><br><span class="line">			staticPerson.FistName = &quot;John&quot;;</span><br><span class="line">			staticPerson.LastName = &quot;Smith&quot;;</span><br><span class="line">			Console.WriteLine(staticPerson.GetFullName());</span><br><span class="line">			//编译器无法判断，只有在运行时抛出异常;</span><br><span class="line">			dynamicPerson.GetFullname();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	class Person</span><br><span class="line">	&#123;</span><br><span class="line">		public string FistName &#123; get; set; &#125;</span><br><span class="line">		public string LastName &#123; get; set; &#125;</span><br><span class="line">		public string GetFullName()</span><br><span class="line">		&#123;</span><br><span class="line">			return string.Concat(FistName, &quot; &quot;, LastName);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>与var关键字不同，定义为dynamic的对象可以在运行期间改变其类型。注意在使用var关键字时，对象类型的确定会延迟。类型一旦确定，就不能改变。</p>
+</blockquote>
+<p>动态对象的类型可以改变，而且可以改变多次，这不同于把对象的类型强制转换为另一个类型。</p>
+<blockquote>
+<p>在强制转换对象的类型时，是用另一种兼容的类型创造一个新对象。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using System.Windows;</span><br><span class="line"></span><br><span class="line">namespace Demo</span><br><span class="line">&#123;</span><br><span class="line">	</span><br><span class="line">	class Program</span><br><span class="line">	&#123;</span><br><span class="line">		static void Main(string[] args)</span><br><span class="line">		&#123;</span><br><span class="line">			dynamic dyn;</span><br><span class="line"></span><br><span class="line">			dyn = 100;</span><br><span class="line">			Console.WriteLine(dyn.GetType());</span><br><span class="line">			Console.WriteLine(dyn);</span><br><span class="line"></span><br><span class="line">			Console.WriteLine();</span><br><span class="line"></span><br><span class="line">			dyn = &quot;This is a string&quot;;</span><br><span class="line">			Console.WriteLine(dyn.GetType());</span><br><span class="line">			Console.WriteLine(dyn);</span><br><span class="line"></span><br><span class="line">			Console.WriteLine();</span><br><span class="line"></span><br><span class="line">			dyn = new Peerson() &#123; FirstName = &quot;Bugs&quot;, LastName = &quot;Bunny&quot; &#125;;</span><br><span class="line">			Console.WriteLine(dyn.GetType());</span><br><span class="line">			Console.WriteLine(&quot;&#123;0&#125; &#123;1&#125;&quot;,dyn.FirstName,dyn.LastName);</span><br><span class="line"></span><br><span class="line">			Console.ReadKey();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	class Peerson</span><br><span class="line">	&#123;</span><br><span class="line">		public string FirstName &#123; get; set; &#125;</span><br><span class="line">		public string LastName &#123; get; set; &#125;</span><br><span class="line">		public string GetFullName()</span><br><span class="line">		&#123;</span><br><span class="line">			return string.Concat(FirstName, &quot; &quot;, LastName);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>对于dynamic类型有两个限制。动态对象不支持扩展方法，匿名函数(Lamdba表达式)也不能使用作动态方法调用的参数，因此LINQ不能用于动态对象。大多数LINQ调用都是扩展方法，而Lambda表达式用作这些扩展方法的参数。</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>鼓励一下作者，增加写作的动力~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/ZFB.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/WX.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/29/Stduay-Yii/" class="archive-article-date">
-  	<time datetime="2018-09-29T03:16:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/29/Stduay-Yii/">学习-Yii框架</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">YII</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/25/StudyDataStructure2/" class="archive-article-date">
-  	<time datetime="2018-09-25T07:01:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/25/StudyDataStructure2/">《数据库系统工程师教程-中级》 笔记 第二章数据结构(2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/20/Clear-the-server-cache/" class="archive-article-date">
-  	<time datetime="2018-09-20T03:21:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/20/Clear-the-server-cache/">清除服务器缓存</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/19/StudyDataStructure/" class="archive-article-date">
-  	<time datetime="2018-09-19T08:02:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/19/StudyDataStructure/">《数据库系统工程师教程-中级》 笔记 第二章数据结构(1)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ready//" class="article-tag-list-link color1">Ready</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/18/CSharp-HttpClientClass-1/" class="archive-article-date">
-  	<time datetime="2018-09-18T01:39:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/18/CSharp-HttpClientClass-1/">CSharp-HttpClientClass</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -382,7 +271,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -395,168 +284,89 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/11/HigConcurrencPprograCcomparison/" class="archive-article-date">
-  	<time datetime="2018-09-11T02:08:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-11</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/28/CSharpLINQ/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C#LINQ实践记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/11/HigConcurrencPprograCcomparison/">高并发方案对比（仅扣减库存部分）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/web//" class="article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DLR"><span class="toc-number">1.</span> <span class="toc-text">DLR</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dynamic-类型"><span class="toc-number">1.1.</span> <span class="toc-text">dynamic 类型</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/07/Csharp-Connection-MySQL/" class="archive-article-date">
-  	<time datetime="2018-09-07T12:02:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/07/Csharp-Connection-MySQL/">Csharp连接MYSQL核心代码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CSharp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Net//" class="article-tag-list-link color4">Net</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/07/CSharp-Timer-Class/" class="archive-article-date">
-  	<time datetime="2018-09-07T10:14:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/07/CSharp-Timer-Class/">CSharp定时类</a>
-    </h1>
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTQwMi8xMTkzOA==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CSharp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Net//" class="article-tag-list-link color4">Net</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -587,8 +397,8 @@
  	var yiliaConfig = {
  		mathjax: false,
  		isHome: false,
- 		isPost: false,
- 		isArchive: true,
+ 		isPost: true,
+ 		isArchive: false,
  		isTag: false,
  		isCategory: false,
  		open_in_new: false,

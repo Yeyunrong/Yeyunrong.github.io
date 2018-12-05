@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/12/05/CSharpDLR/</loc>
+    <lastmod>2018-12-05T07:06:27.330Z</lastmod>
+    <data>
+        <display>
+        <title>C#动态语言简记</title>
+        <pubTime>2018-12-05T07:03:37.000Z</pubTime>
+        
+        <tag>CSharp</tag>
+         
+         
+           
+             
+              <breadCrumb title="Net" url="http://yoursite.com/categories/Net/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/11/28/CSharpLINQ/</loc>
-    <lastmod>2018-11-28T02:50:32.273Z</lastmod>
+    <lastmod>2018-12-05T06:13:44.983Z</lastmod>
     <data>
         <display>
         <title>C#LINQ实践记录</title>
@@ -1011,9 +1031,9 @@
         <title>laravel与Redis开发购物车</title>
         <pubTime>2018-03-29T09:54:43.000Z</pubTime>
         
-        <tag>Redis</tag>
-         
         <tag>Laravel</tag>
+         
+        <tag>Redis</tag>
          
          
            
@@ -1311,9 +1331,9 @@
         <title>Laravel使用Redis缓存锁</title>
         <pubTime>2018-07-20T08:35:18.000Z</pubTime>
         
-        <tag>Redis</tag>
-         
         <tag>Laravel</tag>
+         
+        <tag>Redis</tag>
          
          
            

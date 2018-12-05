@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="葉蕓榕-随笔">
 <meta property="og:description" content="语言集查询(Language Integrated Query,LINQ)集成了C#编程语言中的查询语法，可以用相同的语法访问不同的数据源。LINQ提供了不同数据源的抽象层，所以可以使用相同的语法。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-28T02:50:32.273Z">
+<meta property="og:updated_time" content="2018-12-05T06:13:44.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#LINQ实践记录">
 <meta name="twitter:description" content="语言集查询(Language Integrated Query,LINQ)集成了C#编程语言中的查询语法，可以用相同的语法访问不同的数据源。LINQ提供了不同数据源的抽象层，所以可以使用相同的语法。">
@@ -185,7 +185,7 @@
     	<div id="toc-article" class="toc-article">
     	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     		<strong class="toc-title">文章目录</strong>
-               <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实例"><span class="toc-number">1.</span> <span class="toc-text">实例</span></a></li></ol>
+               <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实例"><span class="toc-number">1.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标准的查询操作符"><span class="toc-number">2.</span> <span class="toc-text">标准的查询操作符</span></a></li></ol>
              </div>
        <script type="text/javascript">
     	function showToc(){
@@ -209,6 +209,64 @@
 <p>语言集查询(Language Integrated Query,LINQ)集成了C#编程语言中的查询语法，可以用相同的语法访问不同的数据源。LINQ提供了不同数据源的抽象层，所以可以使用相同的语法。<br><a id="more"></a></p>
 </blockquote>
 <h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using System.Windows;</span><br><span class="line"></span><br><span class="line">namespace Demo</span><br><span class="line">&#123;</span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 武林高手类；</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	class MartialArtsMaster</span><br><span class="line">	&#123;</span><br><span class="line">		public int ID &#123; get; set; &#125;</span><br><span class="line">		public string Name &#123; get; set; &#125;</span><br><span class="line">		public int Age &#123; get; set; &#125;</span><br><span class="line">		public string MenPai &#123; get; set; &#125;</span><br><span class="line">		public string KongFu &#123; get; set; &#125;</span><br><span class="line">		public int Level &#123; get; set; &#125;</span><br><span class="line"></span><br><span class="line">		public override string ToString()</span><br><span class="line">		&#123;</span><br><span class="line">			return string.Format(&quot;&#123;0&#125;--&#123;1&#125;--&#123;2&#125;--&#123;3&#125;--&#123;4&#125;--&#123;5&#125;&quot;, ID, Name, Age, MenPai, KongFu, Level);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 武林绝学类</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	class KongFu</span><br><span class="line">	&#123;</span><br><span class="line">		public int ID &#123; get; set; &#125;</span><br><span class="line">		public string Name &#123; get; set; &#125;</span><br><span class="line">		public int Power &#123; get; set; &#125;</span><br><span class="line"></span><br><span class="line">		public override string ToString()</span><br><span class="line">		&#123;</span><br><span class="line">			return string.Format(&quot;&#123;0&#125;--&#123;1&#125;--&#123;2&#125;&quot;, ID, Name, Power);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	class Program</span><br><span class="line">	&#123;</span><br><span class="line">		static void Main(string[] args)</span><br><span class="line">		&#123;</span><br><span class="line">			List&lt;MartialArtsMaster&gt; masterList = new List&lt;MartialArtsMaster&gt;()</span><br><span class="line">			&#123;</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 1,Name = &quot;HR&quot;,Age = 18,MenPai = &quot;GB&quot;,KongFu = &quot;DGBF&quot;,Level = 89&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 2,Name = &quot;HQG&quot;,Age = 70,MenPai = &quot;GB&quot;,KongFu = &quot;DGBF&quot;,Level = 10&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 3,Name = &quot;GJ&quot;,Age = 22,MenPai = &quot;GB&quot;,KongFu = &quot;DGBF&quot;,Level = 10&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 4,Name = &quot;RWX&quot;,Age = 50,MenPai = &quot;MJ&quot;,KongFu = &quot;KHBD&quot;,Level = 10&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 5,Name = &quot;DFBB&quot;,Age = 35,MenPai = &quot;MJ&quot;,KongFu = &quot;KHBD&quot;,Level = 540&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 6,Name = &quot;LPZ&quot;,Age = 23,MenPai = &quot;HS&quot;,KongFu = &quot;KHBD&quot;,Level = 404&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 7,Name = &quot;YBQ&quot;,Age = 50,MenPai = &quot;HS&quot;,KongFu = &quot;KHBD&quot;,Level = 40&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 8,Name = &quot;LHC&quot;,Age = 23,MenPai = &quot;HS&quot;,KongFu = &quot;DGJJ&quot;,Level = 4045&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 9,Name = &quot;MCF&quot;,Age = 45,MenPai = &quot;THD&quot;,KongFu = &quot;JYZJ&quot;,Level = 78&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 10,Name = &quot;HYS&quot;,Age = 28,MenPai = &quot;THD&quot;,KongFu = &quot;TZSG&quot;,Level = 78&#125;,</span><br><span class="line">				new MartialArtsMaster()&#123; ID = 11,Name = &quot;FQY&quot;,Age = 46,MenPai = &quot;HS&quot;,KongFu = &quot;DGJJ&quot;,Level = 78&#125;,</span><br><span class="line">			&#125;;</span><br><span class="line"></span><br><span class="line">			List&lt;KongFu&gt; kongFuList = new List&lt;KongFu&gt;()</span><br><span class="line">			&#123;</span><br><span class="line">				new KongFu() &#123;ID=1,Name = &quot;DGBF&quot;,Power = 100&#125;,</span><br><span class="line">				new KongFu() &#123;ID=2,Name = &quot;XLSBZ&quot;,Power = 45&#125;,</span><br><span class="line">				new KongFu() &#123;ID=3,Name = &quot;KHBD&quot;,Power = 75&#125;,</span><br><span class="line">				new KongFu() &#123;ID=4,Name = &quot;DGJJ&quot;,Power = 45&#125;,</span><br><span class="line">				new KongFu() &#123;ID=5,Name = &quot;JYZJ&quot;,Power = 39&#125;,</span><br><span class="line">				new KongFu() &#123;ID=6,Name = &quot;TZSG&quot;,Power = 2&#125;,</span><br><span class="line">			&#125;;</span><br><span class="line"></span><br><span class="line">			//基本表达式写法;</span><br><span class="line">			//var res = from m in masterList where m.MenPai == &quot;GB&quot; select m.Name;</span><br><span class="line"></span><br><span class="line">			//联合查询 使用多个from in</span><br><span class="line">			/*var res = from m in masterList</span><br><span class="line">					  from k in kongFuList</span><br><span class="line">					  where m.KongFu == k.Name &amp;&amp; k.Power &gt; 90</span><br><span class="line">					  select new &#123; master = m, kongfu = k &#125;;*/</span><br><span class="line"></span><br><span class="line">			//联合查询二 使用扩展方法进行联合查询;</span><br><span class="line">			/*var res = masterList.SelectMany(m =&gt; kongFuList, (m, k) =&gt; new &#123; master = m, kongfu = k &#125;)</span><br><span class="line">				.Where(x =&gt; x.master.KongFu == x.kongfu.Name &amp;&amp; x.kongfu.Power &gt; 90);*/</span><br><span class="line"></span><br><span class="line">			//使用 JOIN ON 进行联合查询;</span><br><span class="line">			/*var res = from m in masterList</span><br><span class="line">					  join k in kongFuList on m.KongFu equals k.Name</span><br><span class="line">					  select new &#123; master = m, kongfu = k &#125;;*/</span><br><span class="line"></span><br><span class="line">			//对查询的结果进行排序 - 级别升序，年龄降序</span><br><span class="line">			/*var res = from m in masterList</span><br><span class="line">					  orderby m.Level, m.Age descending</span><br><span class="line">					  select m;*/</span><br><span class="line"></span><br><span class="line">			//使用扩展方法的形式对查询结果进行排序。</span><br><span class="line">			//var res = masterList.OrderBy(m =&gt; m.Level).ThenByDescending(m =&gt; m.Age);</span><br><span class="line"></span><br><span class="line">			//分组查询;</span><br><span class="line">			/*var res = from k in kongFuList</span><br><span class="line">					  join m in masterList on k.Name equals m.KongFu</span><br><span class="line">					  into groups //根据 k 分组</span><br><span class="line">					  orderby groups.Count()</span><br><span class="line">					  select new &#123; kongfu = k, count = groups.Count() &#125;;*/</span><br><span class="line"></span><br><span class="line">			//以自身字段分组;</span><br><span class="line">			/*var res = from m in masterList</span><br><span class="line">					  group m by m.MenPai into g</span><br><span class="line">					  select new &#123; MenPai = g.Key, Count = g.Count() &#125;;*/</span><br><span class="line"></span><br><span class="line">			/*foreach (var item in res)</span><br><span class="line">			&#123;</span><br><span class="line">				Console.WriteLine(item);</span><br><span class="line">			&#125;*/</span><br><span class="line"></span><br><span class="line">			//判断数据里是否有所需要的数据</span><br><span class="line">			Console.WriteLine(masterList.Any(m =&gt; m.MenPai == &quot;少林寺&quot;));//任一满足，则返回true;</span><br><span class="line">			Console.WriteLine(masterList.All(m =&gt; m.MenPai == &quot;丐帮&quot;));//所有满足，则返回true；</span><br><span class="line"></span><br><span class="line">			Console.ReadKey();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="标准的查询操作符"><a href="#标准的查询操作符" class="headerlink" title="标准的查询操作符"></a>标准的查询操作符</h2><table>
+<thead>
+<tr>
+<th>标准查询操作符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Where OfType&lt;TResult></td>
+<td>筛选操作符定义了返回元素的条件。在Where查询操作符中，可以使用谓词，例如Lambda表达式定义的谓词，来返回布尔值。OfType&lt;TResult>根据类型筛选元素，只返回TResult类型的元素。</td>
+</tr>
+<tr>
+<td>Select 和 SelectMany</td>
+<td>投射操作符用于把对象转换成另一个新的对象。Select 和 SelectMany 定义了根据选择函数选择结果值的投射。</td>
+</tr>
+<tr>
+<td>OrderBy、ThenBy、OrderByDescending、ThenByDescending、Reverse</td>
+<td>排序操作符改变所返回的元素的顺序。OrderBy按升序排序。如果第一次排序的结果很类似，就可以使用ThenBy和ThenBy Descending操作符进行第二次排序。Reverse反转集合中元素的顺序。</td>
+</tr>
+<tr>
+<td>Join、GroupJoin</td>
+<td>连接运算符用于合并不直接相关的集合。使用join操作符，可以根据键选择器函数连接两个集合。这类似于SQL中的JOIN。Groupjoin操作符连接两个集合，组合其操作。</td>
+</tr>
+<tr>
+<td>GroupBy、ToLookup</td>
+<td>组合运算符吧数据放在组中。GroupBy操作符组合有公共键的元素。ToLookup通过创建一个一对多字典，来组合元素。</td>
+</tr>
+<tr>
+<td>Any、All、Contains</td>
+<td>如果元素序列满足指定的条件。Any确定集合中是否有满足谓词函数的元素：All确定集合中的所有元素是否都满足谓词函数：Contains检查某个元素是否在集合中。这些操作符都返回一个布尔值。</td>
+</tr>
+<tr>
+<td>Take、Skip、TakeWhile、SkipWhile</td>
+<td>分区操作符返回集合的一个子集。Take、Skip、TakeWhile和SkipWhile都是分区操作符。使用它们可以得到部分结果。使用Take必须指定要从集合中提取的元素个数：Skip跳过指定的元素个数，提取其他元素：TakeWhile提取条件为真的元素。</td>
+</tr>
+<tr>
+<td>Distinct、Union、Intersect、Except、Zip</td>
+<td>Set操作符返回一个集合。Distinct从集合中删除重复的元素。除了Distinct之外，其他Set操作符都需要两个集合。Union返回出现在其中一个集合的唯一元素。Intersect返回两个集合中都有的元素。Except返回只出现在一个集合中的元素。zip是.Net4新增的，他把两个集合合并为一个。</td>
+</tr>
+<tr>
+<td>Finst、FinstOrDefault、Last、LastOrDefault、ElementAt、ElementAtOrDeFault、Single、SingleOrDefault</td>
+<td>元素操作符仅返回一个元素。Finst返回第一个满足条件的元素。FindOrDefault类似于Finst，但如果没有找到满足条件的元素，就返回默认值。Last返回最后一个满足条件的元素。ElementAt指定了要返回的元素的位置。Single只返回一个满足条件的元素。。如果有多个元素都满足条件，就抛出一个异常。</td>
+</tr>
+<tr>
+<td>Count、Sum、Min、Max、Average、aggregate</td>
+<td>聚合操作符计算集合一个值。利用这些聚合操作符，可以计算所有值的总和、所有元素的个数、值最大和最小的元素，以及平均值。</td>
+</tr>
+<tr>
+<td>Toarray、ToEnumerable、ToList、ToDicitionary、Cast&lt;TResult></td>
+<td>这些转换操作符将集合转换为数组：IEnumerable、IList等。</td>
+</tr>
+<tr>
+<td>Empty、Range、Repeat</td>
+<td>这些生成操作符返回了一个新集合。使用Empty时集合是空的：Range返回一系列数字；Repeat返回一个始终重复一个值的集合。</td>
+</tr>
+</tbody>
+</table>
 
       
 
@@ -283,6 +341,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/12/05/CSharpDLR/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          C#动态语言简记
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/11/27/StudyDataStructure8/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">《数据库系统工程师教程-中级》第八章 关系数据库 笔记</div>
@@ -312,7 +379,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实例"><span class="toc-number">1.</span> <span class="toc-text">实例</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实例"><span class="toc-number">1.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标准的查询操作符"><span class="toc-number">2.</span> <span class="toc-text">标准的查询操作符</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -470,15 +537,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lua</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,11 +549,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color2">Editor</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Editor</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lua</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,11 +569,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
